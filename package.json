@@ -1,6 +1,6 @@
 {
   "name": "blocktron-explorer",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "private": false,
   "dependencies": {
     "react": "^16.4.1",
@@ -12,5 +12,25 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "description": "The web-ui for exploring blocktron blockchain",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Blocktron-Project/blocktron-explorer.git"
+  },
+  "keywords": [
+    "blocktron",
+    "blocktron-explorer",
+    "blockchain",
+    "dapps",
+    "blocktron-lib"
+  ],
+  "author": "Sandeep Vattapparambil",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Blocktron-Project/blocktron-explorer/issues"
+  },
+  "homepage": "https://github.com/Blocktron-Project/blocktron-explorer#readme"
 }
