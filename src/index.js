@@ -5,6 +5,6 @@ import Header from './app-header/header';
 import Body from './app-body/body'
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<Header />, document.getElementById('header'));
-ReactDOM.render(<Body />, document.getElementById('body'));
+ReactDOM.render( < Header / > , document.getElementById('header'));
+ReactDOM.render( < Body / > , document.getElementById('body'));
 registerServiceWorker();
