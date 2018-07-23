@@ -9,8 +9,6 @@
             "never"
         ],
         "parserOptions": {
-            "sourceType": "module",
-            "allowImportExportEverywhere": true,
             "ecmaVersion": 6,
             "ecmaFeatures": {
                 "experimentalObjectRestSpread": true
