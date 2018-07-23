@@ -15,7 +15,9 @@
   },
   "description": "The web-ui for exploring blocktron blockchain",
   "main": "index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "npm": "^6.2.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Blocktron-Project/blocktron-explorer.git"
