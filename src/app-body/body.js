@@ -5,10 +5,10 @@ import Welcome from '../app-welcome/welcome';
 
 class Header extends Component {
     render() {
-        return ( 
+        return (
             <div className="container">
-                <Welcome/>
-                <SearchNode/>
+                <Welcome />
+                <SearchNode />
             </div>
         );
     }
