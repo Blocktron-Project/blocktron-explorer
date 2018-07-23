@@ -1,0 +1,25 @@
+ /* label color */
+
+ .input-field label {
+     color: #616161 ;
+ }
+
+ /* label focus color */
+
+ .input-field input[type=text]:focus+label {
+     color: #cddc39 !important;
+ }
+
+ /* label underline focus color */
+
+ .input-field input[type=text]:focus {
+     border-bottom: 1px solid #cddc39 !important;
+     box-shadow: 0 1px 0 0 #cddc39 !important;
+ }
+
+ /* valid color */
+
+ .input-field input[type=text].valid {
+     border-bottom: 1px solid #cddc39 !important;
+     box-shadow: 0 1px 0 0 #cddc39 !important;
+ }

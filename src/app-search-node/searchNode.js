@@ -12,10 +12,10 @@ class Header extends Component {
             <div className="card-content white-text">
               <div className="row">
                 <div className="input-field col s8 m10 l11">
-                  <input id="search" type="text" class="validate" />
-                  <label for="search">Search Node</label>
+                  <input id="search" type="text" className="validate" />
+                  <label htmlFor="search">Search Node</label>
                 </div>
-                <a class="waves-effect btn lime white-text"><i class="material-icons">search</i></a>
+                <a className="waves-effect btn lime white-text"><i className="material-icons">search</i></a>
               </div>
             </div>
           </div>
