@@ -9,7 +9,8 @@ class Welcome extends Component {
           <div className="card-panel lime lighten-4">
             <span className="light-green-text darken-4">
               <strong>Hello, there</strong>..welcome to Blocktron explorer, you can interact with your blocktron-node instance throught his app.
-                            </span>
+              <i className="right material-icons">cancel</i>
+            </span>
           </div>
         </div>
       </div>

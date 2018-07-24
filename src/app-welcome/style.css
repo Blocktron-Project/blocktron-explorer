@@ -1,3 +1,7 @@
 strong {
     font-weight: 700;
 }
+
+.material-icons{
+    cursor: pointer;
+}
