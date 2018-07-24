@@ -2,8 +2,30 @@ import React, {
   Component
 } from 'react';
 import './style.css';
+import axios from 'axios';
 
 class Header extends Component {
+
+  constructor() {
+    super()
+
+  }
+
+  searchHandler() {
+    let query = document.querySelector('#search');
+    let url = /^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]):[0-9]+$/;
+    if (!query.value.match(url)) {
+      if (!query.classList.contains('invalid')) {
+        query.classList += ' invalid';
+        query.classList.remove('valid');
+      }
+    } else {
+      if (query.classList.contains('invalid')) {
+        query.classList.remove('invalid');
+      }
+    }
+  };
+
   render() {
     return (
       <div className="row">
@@ -15,14 +37,14 @@ class Header extends Component {
                   <input id="search" type="text" className="validate" />
                   <label htmlFor="search">Search Node</label>
                 </div>
-                <a className="waves-effect btn lime white-text"><i className="material-icons">search</i></a>
+                <a className="waves-effect btn lime white-text" onClick={this.searchHandler}>
+                  <i className="material-icons">search</i></a>
               </div>
             </div>
           </div>
         </div>
       </div>
     );
-  }
+  };
 }
-
 export default Header;

@@ -1,7 +1,7 @@
  /* label color */
 
  .input-field label {
-     color: #616161 ;
+     color: #616161;
  }
 
  /* label focus color */
@@ -23,3 +23,9 @@
      border-bottom: 1px solid #cddc39 !important;
      box-shadow: 0 1px 0 0 #cddc39 !important;
  }
+
+ /* invalid color */
+ .input-field input[type=text].invalid {
+    border-bottom: 1px solid #f44336;
+    box-shadow: 0 1px 0 0 #f44336;
+  }
