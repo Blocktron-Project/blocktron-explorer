@@ -19,7 +19,7 @@ class Header extends Component {
         query.classList += ' invalid';
         query.classList.remove('valid');
       }
-    } else if(query.value.match(url)){
+    } else if (query.value.match(url)) {
       if (query.classList.contains('invalid')) {
         query.classList.remove('invalid');
         validUrl = query.value;
