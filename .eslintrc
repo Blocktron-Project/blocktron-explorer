@@ -16,7 +16,7 @@
             "single"
         ],
         "strict": [
-            2,
+            0,
             "never"
         ],
         "react/jsx-uses-react": 2,
