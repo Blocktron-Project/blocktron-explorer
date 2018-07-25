@@ -30,6 +30,20 @@ class Header extends Component {
     }
   };
 
+  search = () => {
+    let query = document.querySelector('#search').value;
+    let base = 'http://';
+    let url = base + query;
+    axios.get(url)
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
+  };
+
   render() {
     return (
       <div className="row">
@@ -41,7 +55,7 @@ class Header extends Component {
                   <input id="search" type="text" className={`validate ${this.state.searchInput}`} onChange={this.validate} />
                   <label htmlFor="search">Search Node</label>
                 </div>
-                <a id="button" className={`waves-effect btn lime white-text ${this.state.searchButton}`}>
+                <a id="button" className={`waves-effect btn lime white-text ${this.state.searchButton}`} onClick={this.search}>
                   <i className="material-icons">search</i></a>
               </div>
             </div>
