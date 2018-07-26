@@ -3,7 +3,7 @@ import './style.css';
 import SearchNode from '../app-search-node/searchNode';
 import Welcome from '../app-welcome/welcome';
 
-class Header extends Component {
+class Body extends Component {
 
     render() {
         return (
@@ -14,4 +14,4 @@ class Header extends Component {
         );
     }
 }
-export default Header;
+export default Body;
