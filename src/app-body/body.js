@@ -2,14 +2,30 @@ import React, { Component } from 'react';
 import './style.css';
 import SearchNode from '../app-search-node/searchNode';
 import Welcome from '../app-welcome/welcome';
+import NodeDetails from '../app-node-details/nodeDetails';
 
 class Body extends Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            NodeDetails: ''
+        };
+    }
+
+    getNodeDetails = (data) => {
+        console.log(data);
+        this.setState({
+            NodeDetails: data
+        });
+    };
 
     render() {
         return (
             <div className="container">
                 <Welcome />
-                <SearchNode />
+                <SearchNode getNodeDetails={this.getNodeDetails} />
+                <NodeDetails nodeDetails={this.state.NodeDetails} />
             </div>
         );
     }

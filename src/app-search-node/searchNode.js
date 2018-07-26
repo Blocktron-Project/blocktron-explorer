@@ -6,8 +6,8 @@ import axios from 'axios';
 
 class SearchNode extends Component {
 
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       searchInput: '',
       searchButton: 'disabled'
@@ -30,18 +30,19 @@ class SearchNode extends Component {
     }
   };
 
-  search = () => {
+  search = (event) => {
+    let self = this;
+    event.preventDefault();
     let query = document.querySelector('#search').value;
     let base = 'http://';
     let url = base + query;
     axios.get(url)
       .then(function (response) {
-        console.log(response);
+        self.props.getNodeDetails(response);
       })
       .catch(function (error) {
         M.toast({ html: 'Node not acccessible', classes: 'red white-text' });
       });
-
   };
 
   render() {
