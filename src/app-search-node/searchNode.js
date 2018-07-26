@@ -4,7 +4,7 @@ import React, {
 import './style.css';
 import axios from 'axios';
 
-class Header extends Component {
+class SearchNode extends Component {
 
   constructor() {
     super()
@@ -39,7 +39,7 @@ class Header extends Component {
         console.log(response);
       })
       .catch(function (error) {
-        console.log(error);
+        M.toast({ html: 'Node not acccessible', classes: 'red white-text' });
       });
 
   };
@@ -65,4 +65,4 @@ class Header extends Component {
     );
   };
 }
-export default Header;
+export default SearchNode;
