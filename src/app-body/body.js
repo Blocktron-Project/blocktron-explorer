@@ -14,7 +14,6 @@ class Body extends Component {
     }
 
     getNodeDetails = (data) => {
-        console.log(data);
         this.setState({
             NodeDetails: data
         });

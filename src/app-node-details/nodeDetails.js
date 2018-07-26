@@ -6,12 +6,10 @@ import './style.css';
 class NodeDetails extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            NodeDetails: this.props.NodeDetails
-        };
     }
+
     render() {
-        if (this.state.NodeDetails) {
+        if (this.props.nodeDetails) {
             return (
                 <div className="row">
                     <div className="col s12">
@@ -32,8 +30,8 @@ class NodeDetails extends Component {
                     </div>
                 </div>
             );
-        }else{
-            return('');
+        } else {
+            return ('');
         }
     };
 }
