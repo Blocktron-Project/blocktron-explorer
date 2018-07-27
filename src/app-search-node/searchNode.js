@@ -41,7 +41,7 @@ class SearchNode extends Component {
         self.props.getNodeDetails(response);
       })
       .catch(function (error) {
-        M.toast({ html: 'Node not acccessible', classes: 'red white-text' });
+        _bt.btToast('Node not accessible!', { level: 'error' });
       });
   };
 
