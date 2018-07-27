@@ -9,7 +9,6 @@ class NodeDetails extends Component {
     }
 
     render() {
-        console.log(this.props);
         if (this.props.nodeDetails && this.props.nodeDetails.data) {
             let data = this.props.nodeDetails.data;
             return (
