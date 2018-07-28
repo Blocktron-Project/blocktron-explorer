@@ -13,14 +13,10 @@ class NodeDetails extends Component {
             let data = this.props.nodeDetails.data;
             return (
                 <div className="row">
-                    <div className="col s12">
-                        <div className="card">
-                            <div className="card-content grey-text">
-                                <span className="card-title">
-                                    <div className="chip left lime">Node</div> {data.configuration.node_address}
-                                </span>
-                            </div>
-                            <div className="card-action grey-text">
+                    <div className="col s12 m6 l6">
+                        <div class="card">
+                            <div class="card-content grey-text">
+                                <span class="card-title"><div className="chip left lime">Node</div> {data.configuration.node_address}</span>
                                 <table className="striped highlight">
                                     <tbody>
                                         <tr>
@@ -88,7 +84,7 @@ class NodeDetails extends Component {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div >
             );
         } else {
             return ('');
