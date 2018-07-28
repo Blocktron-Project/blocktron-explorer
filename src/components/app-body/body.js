@@ -83,11 +83,10 @@ class Body extends Component {
                     <div className="col s12 m9 offset-m2">
                         <div className="card lime lighten-4">
                             <div className="card-content grey-text">
-                                <span className="card-title">Genesis</span>
+                            <span className="card-title">BLOCK #1 - GENESIS</span>
                             </div>
                             <div className="card-content grey-text">
-                            <p>I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
+                            <p>on Sat, 28 Jul 2018 15:57:58 GMT</p>
                         </div>
                         </div>
                        
