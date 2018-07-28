@@ -11,13 +11,17 @@ import './style.css';
  * @extends Component
  */
 class AddNode extends Component {
+    
     /**
      * Constructor to initialize the parent React Component class
      * @param {*} props - The input to the component
      */
     constructor(props) {
         super(props)
-        this.state = {};
+        this.state = {
+            addNodeBtnClass: '',
+            inputClass: 'hide'
+        };
     }
 
     /**
@@ -28,15 +32,19 @@ class AddNode extends Component {
         $('.tooltipped').tooltip();
     }
 
+    handleAddNode = () =>{
+
+    };
+
     /**
      * The main render method to render the DOM
      */
     render() {
         return (
             <div className="center">
-                <a className="waves-effect lime btn tooltipped" data-position="bottom" data-tooltip="Add new node to explore">
+                <a className={`waves-effect lime btn tooltipped ${this.state.addNodeBtnClass}`} onClick={this.handleAddNode} data-position="bottom" data-tooltip="Add new node to explore">
                     <i className="material-icons left">add</i>Add Node</a>
-                <div className="row ">
+                <div className={`row ${this.state.inputClass}`}>
                     <div className="input-field col s10 m6 offset-m3">
                         <input id="url" type="text" className="validate" />
                         <label htmlFor="url">Search Node here..</label>
