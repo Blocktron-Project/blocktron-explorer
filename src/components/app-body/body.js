@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import './style.css';
+
+
 import SearchNode from '../app-search-node/searchNode';
 import Welcome from '../app-welcome/welcome';
 import NodeDetails from '../app-node-details/nodeDetails';
+
+import AddNode from '../app-add-node/add-node';
 
 class Body extends Component {
     constructor(props) {
@@ -32,19 +36,8 @@ class Body extends Component {
                 {/* <SearchNode getNodeDetails={this.getNodeDetails} />
                 <NodeDetails nodeDetails={this.state.NodeDetails} /> */}
 
-                <div className="center">
-                    <a className="waves-effect lime btn tooltipped" data-position="bottom" data-tooltip="Add new node to explore">
-                        <i className="material-icons left">add</i>Add Node</a>
-                    <div className="row ">
-                        <div className="input-field col s10 m6 offset-m3">
-                            <input id="url" type="text" className="validate" />
-                            <label htmlFor="url">Search Node here..</label>
-                        </div>
-                        <div className="col s2">
-                            <a className="btn-floating lime disabled"><i className="material-icons">add</i></a>
-                        </div>
-                    </div>
-                </div>
+                <AddNode />
+
 
                 <div className="center">
                     <div className="chip lime lighten-3 bold-text">
@@ -86,15 +79,15 @@ class Body extends Component {
                             <div className="card-content grey-text">
                                 <span className="card-title">BLOCK #1 - GENESIS</span>
                                 <p>on Sat, 28 Jul 2018 15:57:58 GMT</p>
-                                <p> <div className="chip lime lighten-3">
+                                <div className="chip lime lighten-3">
                                     PREVIOUS HASH
-                                </div></p>
-                                <p> <div className="chip lime lighten-3">
+                                </div><br/>
+                                <div className="chip lime lighten-3">
                                     HASH
-                                </div></p>
-                                <p> <div className="chip orange lighten-3">
+                                </div><br/>
+                                <div className="chip orange lighten-3">
                                     1323
-                                </div></p>
+                                </div>
 
                             </div>
                             <ul className="collapsible">
@@ -102,10 +95,10 @@ class Body extends Component {
                                     <div className="collapsible-header"><i className="material-icons">monetization_on</i>Transactions</div>
                                     <div className="collapsible-body"><span>
 
-                                        <div class="row">
-                                            <div class="col s12">
-                                                <div class="card-panel lime lighten-4">
-                                                    <span class="grey-text">I am a very simple card. I am good at containing small bits of information.
+                                        <div className="row">
+                                            <div className="col s12">
+                                                <div className="card-panel lime lighten-4">
+                                                    <span className="grey-text">I am a very simple card. I am good at containing small bits of information.
                                                     I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
         </span>
                                                 </div>
