@@ -58,7 +58,7 @@ class Body extends Component {
 
                 <div className="row">
                     <div className="col s12 m9 offset-m2">
-                        <div className="card">
+                        <div className="card hoverable">
                             <div className="card-content grey-text">
                                 <span className="card-title"><div className="chip lime left">
                                     Node
@@ -82,7 +82,7 @@ class Body extends Component {
 
                 <div className="row">
                     <div className="col s12 m9 offset-m2">
-                        <div className="card lime lighten-5">
+                        <div className="card hoverable lime lighten-5">
                             <div className="card-content grey-text">
                                 <span className="card-title">BLOCK #1 - GENESIS</span>
                                 <p>on Sat, 28 Jul 2018 15:57:58 GMT</p>
