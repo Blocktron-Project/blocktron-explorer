@@ -16,6 +16,7 @@ class Body extends Component {
     componentDidMount() {
         $('.tooltipped').tooltip();
         $('.tabs').tabs();
+        $('.collapsible').collapsible();
     }
 
     getNodeDetails = (data) => {
@@ -85,16 +86,33 @@ class Body extends Component {
                             <div className="card-content grey-text">
                                 <span className="card-title">BLOCK #1 - GENESIS</span>
                                 <p>on Sat, 28 Jul 2018 15:57:58 GMT</p>
-                                <p> <div class="chip lime lighten-3">
+                                <p> <div className="chip lime lighten-3">
                                     PREVIOUS HASH
                                 </div></p>
-                                <p> <div class="chip lime lighten-3">
+                                <p> <div className="chip lime lighten-3">
                                     HASH
                                 </div></p>
+                                <p> <div className="chip orange lighten-3">
+                                    HASH
+                                </div></p>
+
                             </div>
-                            <div className="card-action">
-                                <a>NONCE</a>
-                            </div>
+                            <ul className="collapsible">
+                                <li>
+                                    <div className="collapsible-header"><i className="material-icons">monetization_on</i>Transaction</div>
+                                    <div className="collapsible-body"><span>
+
+                                        <div class="row">
+                                            <div class="col s12">
+                                                <div class="card-panel lime lighten-4">
+                                                    <span class="grey-text">I am a very simple card. I am good at containing small bits of information.
+                                                    I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
+        </span>
+                                                </div>
+                                            </div>
+                                        </div></span></div>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
