@@ -21,7 +21,7 @@ class Body extends Component {
 
     render() {
         return (
-            <div className="container">
+            <div className="row">
                 <Welcome />
                 <SearchNode getNodeDetails={this.getNodeDetails} />
                 <NodeDetails nodeDetails={this.state.NodeDetails} />

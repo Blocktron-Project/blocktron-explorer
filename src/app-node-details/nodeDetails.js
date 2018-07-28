@@ -13,11 +13,13 @@ class NodeDetails extends Component {
             let data = this.props.nodeDetails.data;
             return (
                 <div className="row">
-                    <div className="col s12 m6 l6">
-                        <div class="card">
-                            <div class="card-content grey-text">
-                                <span class="card-title"><div className="chip left lime">Node</div> {data.configuration.node_address}</span>
-                                <table className="striped highlight">
+                    <div className="col s12">
+                        <div className="card">
+                            <div className="card-content grey-text">
+                                <span className="card-title"><div className="chip left lime">Node</div> {data.configuration.node_address}</span>
+                                <div className="row">
+
+                                <table className="col s12 m6 l6 striped highlight">
                                     <tbody>
                                         <tr>
                                             <td>Status Message</td>
@@ -55,6 +57,13 @@ class NodeDetails extends Component {
                                             <td>Memory: External</td>
                                             <td>{data.configuration.memory.external}</td>
                                         </tr>
+                                        
+                                    </tbody>
+                                </table>
+
+                                <table className="col s12 m6 l6 striped highlight">
+                                    <tbody>
+                                    
                                         <tr>
                                             <td>Node Id </td>
                                             <td>{data.configuration.node_id}</td>
@@ -81,9 +90,11 @@ class NodeDetails extends Component {
                                         </tr>
                                     </tbody>
                                 </table>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    
                 </div >
             );
         } else {

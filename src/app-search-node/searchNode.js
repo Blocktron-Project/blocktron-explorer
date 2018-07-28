@@ -63,7 +63,6 @@ class SearchNode extends Component {
                 <a id="button" className={`right waves-effect btn lime white-text ${this.state.searchButton}`} onClick={this.search}>
                   <i className="material-icons">search</i></a>
                 </div>
-               
               </div>
             </div>
           </div>
