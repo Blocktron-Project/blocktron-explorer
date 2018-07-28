@@ -37,10 +37,10 @@ class SearchNode extends Component {
     let base = 'http://';
     let url = base + query;
     axios.get(url)
-      .then(function (response) {
+      .then((response) => {
         self.props.getNodeDetails(response);
       })
-      .catch(function (error) {
+      .catch((error) => {
         _bt.btToast('Node not accessible!', { level: 'error' });
       });
   };
