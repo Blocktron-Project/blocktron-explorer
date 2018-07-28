@@ -56,6 +56,7 @@ class AddNode extends Component {
           });
         }
     }
+    
     /**
      * The main render method to render the DOM
      */
