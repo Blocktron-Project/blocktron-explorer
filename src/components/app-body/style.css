@@ -11,3 +11,7 @@ img.responsive-img, video.responsive-video {
 .bold-text{
     font-weight: 600;
 }
+
+.card .card-title{
+    font-size: 20px;
+}
