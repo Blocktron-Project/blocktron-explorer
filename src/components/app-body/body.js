@@ -93,13 +93,13 @@ class Body extends Component {
                                     HASH
                                 </div></p>
                                 <p> <div className="chip orange lighten-3">
-                                    HASH
+                                    1323
                                 </div></p>
 
                             </div>
                             <ul className="collapsible">
                                 <li>
-                                    <div className="collapsible-header"><i className="material-icons">monetization_on</i>Transaction</div>
+                                    <div className="collapsible-header"><i className="material-icons">monetization_on</i>Transactions</div>
                                     <div className="collapsible-body"><span>
 
                                         <div class="row">
