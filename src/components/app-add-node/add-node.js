@@ -11,7 +11,7 @@ import './style.css';
  * @extends Component
  */
 class AddNode extends Component {
-    
+
     /**
      * Constructor to initialize the parent React Component class
      * @param {*} props - The input to the component
@@ -20,7 +20,9 @@ class AddNode extends Component {
         super(props)
         this.state = {
             addNodeBtnClass: '',
-            inputClass: 'hide'
+            inputClass: 'hide',
+            urlInput: '',
+            addButton:'disabled'
         };
     }
 
@@ -32,10 +34,28 @@ class AddNode extends Component {
         $('.tooltipped').tooltip();
     }
 
-    handleAddNode = () =>{
-
+    handleAddNode = () => {
+        this.setState({
+            addNodeBtnClass: 'disabled',
+            inputClass: ''
+        });
     };
 
+    validateUrl = () => {
+        let input = document.querySelector('#url');
+        let url = /^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]):[0-9]+$/;
+        if (input.value.match(url)) {
+          this.setState({
+            urlInput: 'valid',
+            addButton: ''
+          });
+        } else {
+          this.setState({
+            urlInput: 'invalid',
+            addButton: 'disabled'
+          });
+        }
+    }
     /**
      * The main render method to render the DOM
      */
@@ -46,11 +66,11 @@ class AddNode extends Component {
                     <i className="material-icons left">add</i>Add Node</a>
                 <div className={`row ${this.state.inputClass}`}>
                     <div className="input-field col s10 m6 offset-m3">
-                        <input id="url" type="text" className="validate" />
+                        <input id="url" type="text" className={`validate ${this.state.urlInput}`} onChange={this.validateUrl}/>
                         <label htmlFor="url">Search Node here..</label>
                     </div>
                     <div className="col s2">
-                        <a className="btn-floating lime disabled"><i className="material-icons">add</i></a>
+                        <a className={`btn-floating lime ${this.state.addButton}`}><i className="material-icons">add</i></a>
                     </div>
                 </div>
             </div>
