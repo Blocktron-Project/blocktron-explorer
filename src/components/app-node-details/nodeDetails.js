@@ -8,7 +8,6 @@ class NodeDetails extends Component {
     constructor(props) {
         super(props);
     }
-
     render() {
         if (this.props.nodeDetails && this.props.nodeDetails.data) {
             let data = this.props.nodeDetails.data;
@@ -58,13 +57,10 @@ class NodeDetails extends Component {
                                                     <td>Memory: External</td>
                                                     <td>{data.configuration.memory.external}</td>
                                                 </tr>
-
                                             </tbody>
                                         </table>
-
                                         <table className="col s12 m6 l6 striped highlight">
                                             <tbody>
-
                                                 <tr>
                                                     <td>Node Id </td>
                                                     <td>{data.configuration.node_id}</td>
@@ -96,9 +92,8 @@ class NodeDetails extends Component {
                             </div>
                         </div>
                     </div >
-                    <Blockchain />
+                    <Blockchain node={data.configuration.node_address}/>
                 </div>
-
             );
         } else {
             return ('');
