@@ -16,7 +16,7 @@ class DonutChart extends Component {
         };
     }
 
-    componentDidUpdate() {
+    componentDidMount() {
         let chart = document.querySelector('#chart');
         console.log(this.state);
         this.setState({
