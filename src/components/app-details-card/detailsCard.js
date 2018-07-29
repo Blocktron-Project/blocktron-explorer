@@ -39,8 +39,8 @@ class DetailsCard extends Component {
                             <div className="card-content grey lighten-4">
                                 <div id="overview">
                                 <p className="grey-text"><strong>Status message:</strong> {data.message}</p>
-                                <p className="grey-text"><strong>Status code:</strong> {data.status_code}</p>
-                                <p className="grey-text"><strong>Port:</strong> {data.port}</p>
+                                <p className="grey-text"><strong>Status code:</strong> <span className="label lime lighten-4">{data.status_code}</span></p>
+                                <p className="grey-text"><strong>Port:</strong> <strong className="label lime lighten-4">{data.port}</strong></p>
                                 <p className="grey-text"><strong>Environment:</strong> {data.configuration.environment}</p>
                                 </div>
                                 <div id="configuration">Test 2</div>

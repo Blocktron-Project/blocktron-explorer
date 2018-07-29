@@ -39,7 +39,7 @@ class Body extends Component {
                 <Welcome />
                 <AddNode getNodeDetails={this.getNodeDetails} />
                 <NodeChip nodeDetails={this.state.NodeDetails} handleChipClick={this.handleChipClick} />
-                <DetailsCard selectedNode={this.state.selectedNode}/>
+                <DetailsCard selectedNode={this.state.selectedNode} />
 
                 <div className="row">
                     <div className="col s12 m10 offset-m1">
@@ -61,25 +61,25 @@ class Body extends Component {
                             <ul className="collapsible">
                                 <li>
                                     <div className="collapsible-header"><i className="material-icons">monetization_on</i>Transactions</div>
-                                    <div className="collapsible-body"><span>
-
-                                        <div className="row">
-                                            <div className="col s12">
-                                                <div className="card-panel lime lighten-4">
-                                                    <span className="grey-text">I am a very simple card. I am good at containing small bits of information.
-                                                    I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
-        </span>
+                                    <div className="collapsible-body">
+                                        <span>
+                                            <div className="row">
+                                                <div className="col s12">
+                                                    <div className="card-panel lime lighten-4">
+                                                        <span className="grey-text">I am a very simple card. I am good at containing small bits of information.
+                                                        I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
+                                                    </span>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div></span></div>
+                                        </span>
+                                    </div>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
-
             </div>
-
         );
     }
 }
