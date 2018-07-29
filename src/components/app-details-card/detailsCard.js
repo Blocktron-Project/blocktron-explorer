@@ -6,6 +6,8 @@ import React, {
 } from 'react';
 import './style.css';
 
+import DonutCard from '../app-chart-donut/chart';
+
 class DetailsCard extends Component {
     constructor(props) {
         super(props)
@@ -18,57 +20,11 @@ class DetailsCard extends Component {
          */
         $('.tooltipped').tooltip();
         $('.tabs').tabs();
-
-        /**
-         * Chartjs init
-         */
-        let heapTotal = document.querySelector('#heapTotal');
-        let heapUsed = document.querySelector('#heapUsed');
-        let heapTotalData = {
-            datasets: [{
-                data: [30, 10],
-                backgroundColor: ['#dce775', '#e6ee9c'],
-                hoverBackgroundColor: ['#afb42b', '#cddc39']
-            }],
-
-            // These labels appear in the legend and in the tooltips when hovering different arcs
-            labels: [
-                'Resident Set Size',
-                'Heap Total'
-            ]
-        };
-
-        let heapUsedData = {
-            datasets: [{
-                data: [30, 10],
-                backgroundColor: ['#dce775', '#e6ee9c'],
-                hoverBackgroundColor: ['#afb42b', '#cddc39']
-            }],
-
-            // These labels appear in the legend and in the tooltips when hovering different arcs
-            labels: [
-                'Resident Set Size',
-                'Heap Used'
-            ]
-        };
-
-        if (heapTotal !== null && heapUsed !== null) {
-            let heapTotalChart = new Chart(heapTotal, {
-                type: 'doughnut',
-                data: heapTotalData
-            });
-
-            let heapUsedChart = new Chart(heapUsed, {
-                type: 'doughnut',
-                data: heapUsedData
-            });
-        }
     }
 
     render() {
         if (this.props && this.props.selectedNode) {
             let data = this.props.selectedNode;
-            console.log(data);
             return (
                 <div className="row">
                     <div className="col s12 m10 offset-m1">
@@ -105,12 +61,7 @@ class DetailsCard extends Component {
                                     <p className="grey-text"><strong>Memory - External:</strong> <span className="label lime lighten-4">{data.configuration.memory.external}</span></p>
                                     <p className="grey-text"><strong>Memory - Resident Set Size:</strong> <span className="label lime lighten-4">{data.configuration.memory.resident_set_size}</span></p>
                                     <div className="row">
-                                        <div className="col s12 m6">
-                                            <canvas id="heapTotal" width="300" height="300"></canvas>
-                                        </div>
-                                        <div className="col s12 m6">
-                                            <canvas id="heapUsed" width="300" height="300"></canvas>
-                                        </div>
+                                        <DonutCard chartData={[data.configuration.memory.resident_set_size, data.configuration.memory.heap_total]} labels={['Resident Set Size', 'Heap Total']} />
                                     </div>
                                 </div>
                             </div>
