@@ -42,6 +42,7 @@ class DetailsCard extends Component {
                                 <p className="grey-text"><strong>Status code:</strong> <span className="label lime lighten-4">{data.status_code}</span></p>
                                 <p className="grey-text"><strong>Port:</strong> <strong className="label lime lighten-4">{data.port}</strong></p>
                                 <p className="grey-text"><strong>Environment:</strong> {data.configuration.environment}</p>
+                                <p className="grey-text"><strong>Node Id:</strong> <strong className="label lime lighten-4">{data.configuration.node_id}</strong></p>
                                 </div>
                                 <div id="configuration">Test 2</div>
                                 <div id="memory">Test 3</div>
