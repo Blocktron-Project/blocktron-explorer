@@ -1,18 +1,44 @@
-(function (namespace) {
+/**
+ * Custom NProgress module to be used on browser with contextual export
+ * @namespace _bt
+ */
+let btProgress = {
+  init: () => {
+    NProgress.configure({
+      minimum: 0.08,
+      easing: 'ease',
+      speed: 500,
+      trickle: true,
+      parent: 'body',
+      showSpinner: false
+    });
+  },
 
-  let btProgress = {
-    start: function () {
-      NProgress.start();
-    },
-    done: function () {
-      NProgress.done();
-    }
-  };
+  /**
+   * Start progress
+   */
+  start: () => {
+    NProgress.start();
+  },
 
-  namespace.btProgress = btProgress;
-
-})(window._bt || (window._bt = {}));
+  /**
+   * End progress
+   */
+  done: () => {
+    NProgress.done();
+  }
+};
 
 /**
- * TODO: Contextual loading : AMD/UMD/MODULE/WINDOW object
+ * Try adding to global window object
  */
+try {
+  window._bt.btProgress = btProgress;
+} catch (e) {}
+
+/**
+ * Try exporting as a module
+ */
+try {
+  module.exports = btProgress;
+} catch (e) {}
