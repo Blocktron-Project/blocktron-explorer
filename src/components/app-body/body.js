@@ -42,7 +42,7 @@ class Body extends Component {
                 <DetailsCard selectedNode={this.state.selectedNode}/>
 
                 <div className="row">
-                    <div className="col s12 m9 offset-m2">
+                    <div className="col s12 m10 offset-m1">
                         <div className="card hoverable lime lighten-5">
                             <div className="card-content grey-text">
                                 <span className="card-title">BLOCK #1 - GENESIS</span>

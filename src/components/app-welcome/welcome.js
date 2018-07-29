@@ -17,10 +17,10 @@ class Welcome extends Component {
   render() {
     return (
       <div className="row" ref="hideme">
-        <div className="col s12 m11 offset-m1">
+        <div className="col s12 m10 offset-m1">
           <div className="card-panel lime lighten-4">
             <span className="light-green-text darken-4">
-              <strong>Hello, there</strong>..welcome to Blocktron explorer, you can interact with your blocktron-node instance throught his app.
+              <strong>Hello,</strong>..welcome to Blocktron explorer, You can explore your blocktron node here.
               <i className="right material-icons" onClick={this.hide}>cancel</i>
             </span>
           </div>
