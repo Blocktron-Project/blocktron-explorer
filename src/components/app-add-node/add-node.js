@@ -61,7 +61,7 @@ class AddNode extends Component {
     handleSearch = (event) => {
         let self = this;
         event.preventDefault();
-        NProgress.start();
+        _bt.btProgress.start();
         let query = document.querySelector('#url').value;
         let base = 'http://';
         let url = base + query;
@@ -74,10 +74,11 @@ class AddNode extends Component {
                     addNodeBtnClass: '',
                     inputClass: 'hide'
                 });
-                NProgress.done();
+                _bt.btProgress.done();
             })
             .catch((error) => {
                 _bt.btToast('Node not accessible!', { level: 'error' });
+                _bt.btProgress.done();
             });
     };
 
