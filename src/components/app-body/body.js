@@ -20,7 +20,7 @@ class Body extends Component {
         $('.tooltipped').tooltip();
         $('.tabs').tabs();
         $('.collapsible').collapsible();
-        NProgress.done();
+        _bt.btProgress.done();
     }
 
     getNodeDetails = (data) => {
