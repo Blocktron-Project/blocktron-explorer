@@ -12,12 +12,13 @@ class NodeChip extends Component {
     }
 
     render() {
-        if (this.props && this.props.nodeDetails) {
+        if (this.props && this.props.nodeDetails && this.props.nodeDetails.data) {
+            let data = this.props.nodeDetails.data;
             return (
                 <div className="center">
                     <div className="chip lime lighten-3 bold-text">
                         <img src="img/node.png" alt="Contact Person" />
-                        http://127.0.0.1:3001
+                        {data.configuration.node_address}
                         <i className="close material-icons">close</i>
                     </div>
                 </div>
