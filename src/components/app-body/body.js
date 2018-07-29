@@ -4,6 +4,7 @@ import './style.css';
 import Welcome from '../app-welcome/welcome';
 import AddNode from '../app-add-node/add-node';
 import NodeChip from '../app-node-chip/nodeChip'
+import DetailsCard from '../app-details-card/detailsCard';
 
 class Body extends Component {
     constructor(props) {
@@ -23,17 +24,22 @@ class Body extends Component {
 
     getNodeDetails = (data) => {
         this.setState({
-            NodeDetails: data
+            NodeDetails: data,
+            selectedNode: ''
         });
+    };
+
+    handleChipClick = (node) => {
+        this.setState({ selectedNode: node });
     };
 
     render() {
         return (
             <div className="container">
                 <Welcome />
-                <AddNode getNodeDetails={this.getNodeDetails}/>
-                <NodeChip nodeDetails={this.state.NodeDetails}/>
-               
+                <AddNode getNodeDetails={this.getNodeDetails} />
+                <NodeChip nodeDetails={this.state.NodeDetails} handleChipClick={this.handleChipClick} />
+                <DetailsCard/>
 
 
 
@@ -69,10 +75,10 @@ class Body extends Component {
                                 <p>on Sat, 28 Jul 2018 15:57:58 GMT</p>
                                 <div className="chip lime lighten-3">
                                     PREVIOUS HASH
-                                </div><br/>
+                                </div><br />
                                 <div className="chip lime lighten-3">
                                     HASH
-                                </div><br/>
+                                </div><br />
                                 <div className="chip orange lighten-3">
                                     1323
                                 </div>

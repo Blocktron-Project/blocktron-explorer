@@ -51,17 +51,17 @@ class SearchNode extends Component {
         <div className="col s12">
           <div className="card">
             <div className="card-content grey-text">
-            <span className="card-title">Blocktron Explorer</span>
+              <span className="card-title">Blocktron Explorer</span>
             </div>
             <div className="card-action">
-            <div className="row">
+              <div className="row">
                 <div className="input-field col s8 m10 l11">
                   <input id="search" type="text" className={`validate ${this.state.searchInput}`} onChange={this.validate} />
                   <label htmlFor="search">Search Node here..</label>
                 </div>
                 <div className="col s4 m2 l1">
-                <a id="button" className={`right waves-effect btn lime white-text ${this.state.searchButton}`} onClick={this.search}>
-                  <i className="material-icons">search</i></a>
+                  <a id="button" className={`right waves-effect btn lime white-text ${this.state.searchButton}`} onClick={this.search}>
+                    <i className="material-icons">search</i></a>
                 </div>
               </div>
             </div>
