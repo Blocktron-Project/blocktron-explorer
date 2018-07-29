@@ -6,6 +6,11 @@ import Body from './components/app-body/body';
 import btToast from './lib/btToast';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(< Header />, document.getElementById('header'));
-ReactDOM.render(< Body />, document.getElementById('body'));
+NProgress.configure({
+    showSpinner: false
+});
+NProgress.start();
+
+ReactDOM.render( < Header / > , document.getElementById('header'));
+ReactDOM.render( < Body / > , document.getElementById('body'));
 registerServiceWorker();

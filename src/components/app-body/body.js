@@ -21,6 +21,7 @@ class Body extends Component {
         $('.tooltipped').tooltip();
         $('.tabs').tabs();
         $('.collapsible').collapsible();
+        NProgress.done();
     }
 
     getNodeDetails = (data) => {
@@ -36,7 +37,7 @@ class Body extends Component {
                 {/* <SearchNode getNodeDetails={this.getNodeDetails} />
                 <NodeDetails nodeDetails={this.state.NodeDetails} /> */}
 
-                <AddNode />
+                <AddNode getNodeDetails={this.getNodeDetails}/>
 
 
                 <div className="center">
