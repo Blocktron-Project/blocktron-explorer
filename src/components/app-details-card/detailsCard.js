@@ -31,9 +31,8 @@ class DetailsCard extends Component {
                     <div className="col s12 m10 offset-m1">
                         <div className="card hoverable">
                             <div className="card-content grey-text">
-                                <span className="card-title"><div className="chip lime left">
-                                    Node
-                                    </div>{data.configuration.node_address}</span>
+                                <span className="card-title"><div className="chip lime left">Node</div>
+                                {data.configuration.node_address}</span>
                             </div>
                             <div className="card-tabs">
                                 <ul className="tabs tabs-fixed-width">

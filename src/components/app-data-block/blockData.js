@@ -11,6 +11,14 @@ class BlockData extends Component {
         super(props)
     }
 
+    componentDidMount() {
+
+        /**
+         * Materialize init
+         */
+        $('.collapsible').collapsible();
+    }
+
     render() {
         return (
             <div className="col s12 m10 offset-m1">
