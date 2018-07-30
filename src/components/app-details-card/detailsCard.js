@@ -72,7 +72,7 @@ class DetailsCard extends Component {
                             </div>
                         </div>
                     </div>
-                     <BlockChain selectedNode={this.props.selectedNode.configuration.node_address}/> 
+                     <BlockChain nodeAddress={this.props.selectedNode.configuration.node_address}/> 
                 </div>
             );
         }
