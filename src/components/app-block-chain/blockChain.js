@@ -36,7 +36,6 @@ class BlockData extends Component {
     render() {
         if (this.state.blockchain) {
             let chain = this.state.blockchain.chain;
-            console.log(chain);
             return (
                 <div>
                     {
@@ -45,18 +44,19 @@ class BlockData extends Component {
                                 <div key={index} className="col s12 m10 offset-m1">
                                     <div className="card hoverable lime lighten-5">
                                         <div className="card-content grey-text">
-                                            <span className="card-title">BLOCK #1 - GENESIS</span>
-                                            <p>on Sat, 28 Jul 2018 15:57:58 GMT</p>
+                                            <span className="card-title">BLOCK #{index} {index === 0 ? ' - GENESIS' : ''}</span>
+                                            <p>on {new Date(item.timeStamp).toString()}</p>
+                                            PREVIOUS HASH
                                             <div className="chip lime lighten-3">
-                                                PREVIOUS HASH
-                                    </div><br />
+                                               {item.previousHash}
+                                            </div><br />
+                                            HASH
                                             <div className="chip lime lighten-3">
-                                                HASH
-                                    </div><br />
+                                            {item.hash}
+                                             </div><br />
                                             <div className="chip orange lighten-3">
-                                                1323
-                                    </div>
-
+                                            {item.nonce}
+                                            </div>
                                         </div>
                                         <ul className="collapsible">
                                             <li>
@@ -68,7 +68,7 @@ class BlockData extends Component {
                                                                 <div className="card-panel lime lighten-4">
                                                                     <span className="grey-text">I am a very simple card. I am good at containing small bits of information.
                                                                     I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
-                                                        </span>
+                                                                     </span>
                                                                 </div>
                                                             </div>
                                                         </div>
