@@ -4,6 +4,7 @@
 import React, {
     Component
 } from 'react';
+import axios from 'axios';
 import './style.css';
 
 import DonutCard from '../app-chart-donut/chart';
@@ -12,6 +13,10 @@ import BlockData from '../app-data-block/blockData';
 class DetailsCard extends Component {
     constructor(props) {
         super(props)
+
+        this.state = {
+            blockchain: ''
+        };
     }
 
     componentDidUpdate() {
@@ -21,10 +26,24 @@ class DetailsCard extends Component {
          */
         $('.tooltipped').tooltip();
         $('.tabs').tabs();
+
+        /**
+         * Get blockchain from node
+         */
+        if (this.props.selectedNode !== '') {
+            let url = this.props.selectedNode.configuration.node_address + '/blockchain';
+            axios.get(url)
+                .then((response) => {
+                    this.setState({ blockchain: response.data });
+                })
+                .catch(error => {
+                    //TODO: Catch error and do global error logging
+                });
+        }
     }
 
     render() {
-        if (this.props && this.props.selectedNode) {
+        if (this.props && this.props.selectedNode && this.state.blockchain) {
             let data = this.props.selectedNode;
             return (
                 <div className="row">
@@ -32,7 +51,7 @@ class DetailsCard extends Component {
                         <div className="card hoverable">
                             <div className="card-content grey-text">
                                 <span className="card-title"><div className="chip lime left">Node</div>
-                                {data.configuration.node_address}</span>
+                                    {data.configuration.node_address}</span>
                             </div>
                             <div className="card-tabs">
                                 <ul className="tabs tabs-fixed-width">
@@ -68,9 +87,7 @@ class DetailsCard extends Component {
                             </div>
                         </div>
                     </div>
-
-                    <BlockData />
-
+                    {/* <BlockData blockchain={} /> */}
                 </div>
             );
         }
