@@ -62,6 +62,7 @@ class DetailsCard extends Component {
                                     <p className="grey-text"><strong>Memory - Resident Set Size:</strong> <span className="label lime lighten-4">{data.configuration.memory.resident_set_size}</span></p>
                                     <div className="row">
                                         <DonutCard chartData={[data.configuration.memory.resident_set_size, data.configuration.memory.heap_total]} labels={['Resident Set Size', 'Heap Total']} />
+                                        <DonutCard chartData={[data.configuration.memory.resident_set_size, data.configuration.memory.heap_used]} labels={['Resident Set Size', 'Heap Used']} />
                                     </div>
                                 </div>
                             </div>
