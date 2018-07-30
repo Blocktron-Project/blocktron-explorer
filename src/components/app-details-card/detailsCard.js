@@ -7,6 +7,7 @@ import React, {
 import './style.css';
 
 import DonutCard from '../app-chart-donut/chart';
+import BlockData from '../app-data-block/blockData';
 
 class DetailsCard extends Component {
     constructor(props) {
@@ -68,6 +69,9 @@ class DetailsCard extends Component {
                             </div>
                         </div>
                     </div>
+
+                    <BlockData />
+
                 </div>
             );
         }
