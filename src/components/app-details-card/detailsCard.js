@@ -26,18 +26,6 @@ class DetailsCard extends Component {
          */
         $('.tooltipped').tooltip();
         $('.tabs').tabs();
-
-        // if (this.props.selectedNode !== null) {
-        //     let url = this.props.selectedNode.configuration.node_address + '/blockchain';
-        //     axios.get(url)
-        //         .then((response) => {
-        //             this.setState({ blockchain: response.data });
-        //         })
-        //         .catch(error => {
-        //             //TODO: Catch error and do global error logging
-        //         });
-        // }
-
     }
     render() {
         if (this.props && this.props.selectedNode) {

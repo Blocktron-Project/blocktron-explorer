@@ -18,6 +18,14 @@ class BlockData extends Component {
          */
         $('.collapsible').collapsible();
         console.log(this.props);
+        let url = this.props.selectedNode.configuration.node_address + '/blockchain';
+        axios.get(url)
+            .then((response) => {
+                this.setState({ blockchain: response.data });
+            })
+            .catch(error => {
+                //TODO: Catch error and do global error logging
+            });
     }
 
     render() {
