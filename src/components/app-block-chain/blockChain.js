@@ -67,10 +67,22 @@ class BlockData extends Component {
                                                     <span>
                                                         <div className="row">
                                                             <div className="col s12">
-                                                                {item.transactions.length === 0 ? <p className="grey-text">No transactions to show, GENESIS Block is always empty</p> : <div className="card-panel lime lighten-4">
-                                                                    <span className="grey-text"></span>
-                                                                </div>}
-
+                                                                {item.transactions.length === 0
+                                                                    ? <p className="grey-text">No transactions to show, GENESIS Block is always empty</p>
+                                                                    : <div className="card-panel">
+                                                                        <div className="chip orange lighten-3">
+                                                                            {item.transactions[0].transactionId}
+                                                                        </div><br />
+                                                                        <div className="chip orange lighten-3">
+                                                                            {item.transactions[0].amount}
+                                                                        </div><br />
+                                                                        <div className="chip orange lighten-3">
+                                                                            {item.transactions[0].sender}
+                                                                        </div><br />
+                                                                        <div className="chip orange lighten-3">
+                                                                            {item.transactions[0].receiver}
+                                                                        </div><br />
+                                                                    </div>}
                                                             </div>
                                                         </div>
                                                     </span>
