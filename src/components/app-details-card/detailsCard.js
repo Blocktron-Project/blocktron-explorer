@@ -4,7 +4,6 @@
 import React, {
     Component
 } from 'react';
-import axios from 'axios';
 import './style.css';
 
 import DonutCard from '../app-chart-donut/chart';
