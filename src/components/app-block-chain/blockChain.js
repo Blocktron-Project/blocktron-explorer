@@ -17,6 +17,7 @@ class BlockData extends Component {
          * Materialize init
          */
         $('.collapsible').collapsible();
+        console.log(this.props);
     }
 
     render() {

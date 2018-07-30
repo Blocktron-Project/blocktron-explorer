@@ -8,14 +8,14 @@ import axios from 'axios';
 import './style.css';
 
 import DonutCard from '../app-chart-donut/chart';
-import BlockData from '../app-data-block/blockData';
+import BlockChain from '../app-block-chain/blockChain';
 
 class DetailsCard extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            blockchain: ''
+            blockchain: []
         };
     }
 
@@ -27,23 +27,20 @@ class DetailsCard extends Component {
         $('.tooltipped').tooltip();
         $('.tabs').tabs();
 
-        /**
-         * Get blockchain from node
-         */
-        if (this.props.selectedNode !== '') {
-            let url = this.props.selectedNode.configuration.node_address + '/blockchain';
-            axios.get(url)
-                .then((response) => {
-                    this.setState({ blockchain: response.data });
-                })
-                .catch(error => {
-                    //TODO: Catch error and do global error logging
-                });
-        }
-    }
+        // if (this.props.selectedNode !== null) {
+        //     let url = this.props.selectedNode.configuration.node_address + '/blockchain';
+        //     axios.get(url)
+        //         .then((response) => {
+        //             this.setState({ blockchain: response.data });
+        //         })
+        //         .catch(error => {
+        //             //TODO: Catch error and do global error logging
+        //         });
+        // }
 
+    }
     render() {
-        if (this.props && this.props.selectedNode && this.state.blockchain) {
+        if (this.props && this.props.selectedNode) {
             let data = this.props.selectedNode;
             return (
                 <div className="row">
@@ -87,7 +84,7 @@ class DetailsCard extends Component {
                             </div>
                         </div>
                     </div>
-                    {/* <BlockData blockchain={} /> */}
+                     <BlockChain selectedNode={this.props.selectedNode.configuration.node_address}/> 
                 </div>
             );
         }

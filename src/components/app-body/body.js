@@ -40,7 +40,6 @@ class Body extends Component {
                 <AddNode getNodeDetails={this.getNodeDetails} />
                 <NodeChip nodeDetails={this.state.NodeDetails} handleChipClick={this.handleChipClick} />
                 <DetailsCard selectedNode={this.state.selectedNode} />
-                
             </div>
         );
     }
