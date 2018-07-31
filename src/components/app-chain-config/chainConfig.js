@@ -113,7 +113,6 @@ class ChainConfig extends Component {
         } else {
             return ('');
         }
-
     }
 }
 export default ChainConfig;
