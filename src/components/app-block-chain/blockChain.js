@@ -38,7 +38,7 @@ class BlockData extends Component {
         if (this.state.blockchain) {
             let chain = this.state.blockchain.chain;
             return (
-                <div>
+                <div className="chain">
                     {
                         chain.map((item, index) => {
                             return (
