@@ -45,7 +45,7 @@ class BlockData extends Component {
                                 <div key={index} className="col s12 m10 offset-m1">
                                     <div className="card hoverable lime lighten-5">
                                         <div className="card-content grey-text">
-                                            <span className="card-title">BLOCK #{index} {index === 0 ? ' - GENESIS' : ''}</span>
+                                            <span className="card-title"><i className="material-icons left">device_hub</i> BLOCK #{index} {index === 0 ? ' - GENESIS' : ''}</span>
                                             <p>on {new Date(item.timeStamp).toString()}</p>
                                             PREVIOUS HASH &nbsp;
                                             <div className="chip lime lighten-3">
@@ -55,6 +55,7 @@ class BlockData extends Component {
                                             <div className="chip lime lighten-3">
                                                 {item.hash}
                                             </div><br />
+                                            NONCE &nbsp;
                                             <div className="chip orange lighten-3">
                                                 {item.nonce}
                                             </div>
@@ -62,28 +63,39 @@ class BlockData extends Component {
                                         <ul className="collapsible">
                                             <li>
                                                 <div className="collapsible-header">
-                                                    <i className="material-icons">monetization_on</i>Transactions</div>
+                                                    <i className="material-icons">description</i>Transactions</div>
                                                 <div className="collapsible-body">
                                                     <span>
                                                         <div className="row">
-                                                            <div className="col s12">
-                                                                {item.transactions.length === 0
-                                                                    ? <p className="grey-text">No transactions to show, GENESIS Block is always empty</p>
-                                                                    : <div className="card-panel">
+                                                            {item.transactions.length === 0
+                                                                ? <div className="col s12">
+                                                                    <p className="grey-text">GENESIS Block has no transactions to show.</p>
+                                                                </div>
+                                                                : item.transactions.map((transaction, key) => {
+                                                                    return (
+                                                                        <div key={key} className="col s12">
+                                                                            <div className="card-panel">
+                                                                                Transaction Id: &nbsp;
+                                                                        <div className="chip grey lighten-3">
+                                                                                    {transaction.transactionId}
+                                                                                </div><br />
+                                                                                Amount: &nbsp;
                                                                         <div className="chip orange lighten-3">
-                                                                            {item.transactions[0].transactionId}
-                                                                        </div><br />
-                                                                        <div className="chip orange lighten-3">
-                                                                            {item.transactions[0].amount}
-                                                                        </div><br />
-                                                                        <div className="chip orange lighten-3">
-                                                                            {item.transactions[0].sender}
-                                                                        </div><br />
-                                                                        <div className="chip orange lighten-3">
-                                                                            {item.transactions[0].receiver}
-                                                                        </div><br />
-                                                                    </div>}
-                                                            </div>
+                                                                                    {transaction.amount}
+                                                                                </div><br />
+                                                                                Sender: &nbsp;
+                                                                        <div className="chip lime lighten-3">
+                                                                                    {transaction.sender}
+                                                                                </div><br />
+                                                                                Rreceiver: &nbsp;
+                                                                        <div className="chip lime lighten-3">
+                                                                                    {transaction.receiver}
+                                                                                </div><br />
+                                                                            </div>
+                                                                        </div>
+                                                                    )
+                                                                })
+                                                            }
                                                         </div>
                                                     </span>
                                                 </div>

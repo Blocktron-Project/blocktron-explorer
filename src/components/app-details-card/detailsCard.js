@@ -39,7 +39,10 @@ class DetailsCard extends Component {
                             </div>
                             <div className="card-tabs">
                                 <ul className="tabs tabs-fixed-width">
-                                    <li className="tab"><a className="active" href="#overview">Overview</a></li>
+                                    <li className="tab">
+                                    <a className="active" href="#overview">
+                                        Overview</a>
+                                    </li>
                                     <li className="tab"><a href="#configuration">Configuration</a></li>
                                     <li className="tab"><a href="#memory">Memory & Resources</a></li>
                                 </ul>
@@ -71,7 +74,7 @@ class DetailsCard extends Component {
                             </div>
                         </div>
                     </div>
-                     <BlockChain nodeAddress={this.props.selectedNode.configuration.node_address}/> 
+                    <BlockChain nodeAddress={this.props.selectedNode.configuration.node_address} />
                 </div>
             );
         }
