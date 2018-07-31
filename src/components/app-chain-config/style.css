@@ -1,0 +1,8 @@
+table.highlight > tbody > tr:hover {
+    background-color: #f0f4c3;
+}
+
+table.striped > tbody > tr > td:nth-child(2) {
+    background-color: #ffcc80;
+    border: 1px solid rgba(242, 242, 242, 0.5);
+}

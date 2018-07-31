@@ -72,9 +72,9 @@ class ChainConfig extends Component {
 
                                                 <tbody>
                                                     {
-                                                        pendingTransactions.map(transaction => {
+                                                        pendingTransactions.map((transaction, key) => {
                                                             return (
-                                                                <tr>
+                                                                <tr key={key}>
                                                                     <td>{transaction.transactionId}</td>
                                                                     <td>{transaction.amount}</td>
                                                                     <td>{transaction.sender}</td>
@@ -93,10 +93,10 @@ class ChainConfig extends Component {
                                         ?
                                         <table className="striped highlight">
                                             <tbody>
-                                                {networkNodes.map(node => {
+                                                {networkNodes.map((node, key) => {
                                                     return (
-                                                        <tr>
-                                                            <td>{node}</td>
+                                                        <tr key={key}>
+                                                            <td>{key +1} <strong>{node}</strong></td>
                                                         </tr>
                                                     )
                                                 })}
