@@ -27,6 +27,7 @@ class DetailsCard extends Component {
         $('.tooltipped').tooltip();
         $('.tabs').tabs();
     }
+    
     render() {
         if (this.props && this.props.selectedNode) {
             let data = this.props.selectedNode;
@@ -41,8 +42,8 @@ class DetailsCard extends Component {
                             <div className="card-tabs">
                                 <ul className="tabs tabs-fixed-width">
                                     <li className="tab">
-                                    <a className="active" href="#overview">
-                                        Overview</a>
+                                        <a className="active" href="#overview">
+                                            Overview</a>
                                     </li>
                                     <li className="tab"><a href="#configuration">Configuration</a></li>
                                     <li className="tab"><a href="#memory">Memory & Resources</a></li>
@@ -75,7 +76,9 @@ class DetailsCard extends Component {
                             </div>
                         </div>
                     </div>
-                    <ChainConfig/>
+                    {/* Refactor to make an orchestrator which GETs blockchain data 
+                    and pass required data to child components, thus making only a single network request */}
+                    <ChainConfig nodeAddress={this.props.selectedNode.configuration.node_address} />
                     <BlockChain nodeAddress={this.props.selectedNode.configuration.node_address} />
                 </div>
             );
