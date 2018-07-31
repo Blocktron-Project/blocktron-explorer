@@ -1,4 +1,4 @@
-ul.collapsible::after{
+div.chain>div>div>ul.collapsible::after {
     content: '';
     position: absolute;
     left: 44%;
@@ -7,6 +7,19 @@ ul.collapsible::after{
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
     border-top: 20px solid #cddc39;
+    clear: both;
+    z-index: -1;
+}
+
+div.chain>div:last-child>div>ul.collapsible::after {
+    content: '';
+    position: absolute;
+    left: 44%;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid transparent !important;
     clear: both;
     z-index: -1;
 }
