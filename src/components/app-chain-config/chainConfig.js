@@ -60,7 +60,7 @@ class ChainConfig extends Component {
                                 <div id="pendingTransactions">
                                     {
                                         pendingTransactions.length !== 0
-                                            ? <table className="striped highlight">
+                                            ? <table className="striped highlight responsive-table">
                                                 <thead>
                                                     <tr>
                                                         <th>Transaction Id</th>
