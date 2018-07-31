@@ -8,6 +8,7 @@ import './style.css';
 
 import DonutCard from '../app-chart-donut/chart';
 import BlockChain from '../app-block-chain/blockChain';
+import ChainConfig from '../app-chain-config/chainConfig';
 
 class DetailsCard extends Component {
     constructor(props) {
@@ -74,6 +75,7 @@ class DetailsCard extends Component {
                             </div>
                         </div>
                     </div>
+                    <ChainConfig/>
                     <BlockChain nodeAddress={this.props.selectedNode.configuration.node_address} />
                 </div>
             );
