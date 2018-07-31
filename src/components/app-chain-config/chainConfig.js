@@ -75,10 +75,10 @@ class ChainConfig extends Component {
                                                         pendingTransactions.map((transaction, key) => {
                                                             return (
                                                                 <tr key={key}>
-                                                                    <td>{transaction.transactionId}</td>
-                                                                    <td>{transaction.amount}</td>
-                                                                    <td>{transaction.sender}</td>
-                                                                    <td>{transaction.receiver}</td>
+                                                                    <td>{transaction.transactionId.toString()}</td>
+                                                                    <td>{transaction.amount.toString()}</td>
+                                                                    <td>{transaction.sender.toString()}</td>
+                                                                    <td>{transaction.receiver.toString()}</td>
                                                                 </tr>
                                                             )
                                                         })
@@ -96,7 +96,7 @@ class ChainConfig extends Component {
                                                 {networkNodes.map((node, key) => {
                                                     return (
                                                         <tr key={key}>
-                                                            <td>{key +1} <strong>{node}</strong></td>
+                                                            <td>{key +1} <strong>{node.toString()}</strong></td>
                                                         </tr>
                                                     )
                                                 })}
