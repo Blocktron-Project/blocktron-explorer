@@ -43,7 +43,7 @@ class BlockData extends Component {
                         chain.map((item, index) => {
                             return (
                                 <div key={index} className="col s12 m10 offset-m1">
-                                    <div className="card hoverable lime lighten-5">
+                                    <div className={`card hoverable ${index === 0 ? 'grey lighten-4' : ''}`}>
                                         <div className="card-content grey-text">
                                             <span className="card-title"><i className="material-icons left">device_hub</i> BLOCK #{index} {index === 0 ? ' - GENESIS' : ''}</span>
                                             <p>on {new Date(item.timeStamp).toString()}</p>
