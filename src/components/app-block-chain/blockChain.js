@@ -72,7 +72,7 @@ class BlockData extends Component {
                                                         <div className="row">
                                                             {item.transactions.length === 0
                                                                 ? <div className="col s12">
-                                                                    <p className="grey-text">{index===0?'GENESIS ':''}Block has no transactions to show.</p>
+                                                                    <p className="grey-text">{index === 0 ? 'GENESIS ' : ''}Block has no transactions to show.</p>
                                                                 </div>
                                                                 : item.transactions.map((transaction, key) => {
                                                                     return (
