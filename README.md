@@ -1,4 +1,5 @@
-![logo](https://github.com/Blocktron-Project/blocktron-explorer/blob/master/logo.png)
+<img src="https://github.com/Blocktron-Project/blocktron-explorer/blob/master/logo.png" height=300 alt="logo">
+
 # blocktron-explorer
 
 [![Build Status](https://travis-ci.org/Blocktron-Project/blocktron-explorer.svg?branch=master)](https://travis-ci.org/Blocktron-Project/blocktron-explorer)
