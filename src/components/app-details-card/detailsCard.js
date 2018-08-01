@@ -9,6 +9,7 @@ import './style.css';
 import DonutCard from '../app-chart-donut/chart';
 import BlockChain from '../app-block-chain/blockChain';
 import ChainConfig from '../app-chain-config/chainConfig';
+import AddTransaction from '../app-add-transaction/addTransaction';
 
 class DetailsCard extends Component {
     constructor(props) {
@@ -27,7 +28,7 @@ class DetailsCard extends Component {
         $('.tooltipped').tooltip();
         $('.tabs').tabs();
     }
-    
+
     render() {
         if (this.props && this.props.selectedNode) {
             let data = this.props.selectedNode;
@@ -80,6 +81,9 @@ class DetailsCard extends Component {
                     and pass required data to child components, thus making only a single network request */}
                     <ChainConfig nodeAddress={this.props.selectedNode.configuration.node_address} />
                     <BlockChain nodeAddress={this.props.selectedNode.configuration.node_address} />
+
+                    <AddTransaction />
+
                 </div>
             );
         }
