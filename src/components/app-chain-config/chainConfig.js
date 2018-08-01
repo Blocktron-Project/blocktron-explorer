@@ -52,8 +52,10 @@ class ChainConfig extends Component {
                             </div>
                             <div className="card-tabs">
                                 <ul className="tabs tabs-fixed-width">
-                                    <li className="tab"><a className="active" href="#pendingTransactions">Pending Transactions</a></li>
-                                    <li className="tab"><a href="#networkNodes">Network Nodes</a></li>
+                                    <li className="tab">
+                                        <a className="active" href="#pendingTransactions">Pending Transactions {pendingTransactions.length !== 0 ? '(' + pendingTransactions.length.toString() + ')' : ''}</a></li>
+                                    <li className="tab">
+                                        <a href="#networkNodes">Network Nodes {networkNodes.length !== 0 ? '(' + networkNodes.length.toString() + ')' : ''}</a></li>
                                 </ul>
                             </div>
                             <div className="card-content grey lighten-4">
@@ -96,7 +98,7 @@ class ChainConfig extends Component {
                                                 {networkNodes.map((node, key) => {
                                                     return (
                                                         <tr key={key}>
-                                                            <td>{key +1} <strong>{node.toString()}</strong></td>
+                                                            <td>{key + 1} <strong>{node.toString()}</strong></td>
                                                         </tr>
                                                     )
                                                 })}

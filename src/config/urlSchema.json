@@ -3,5 +3,6 @@
     "blockchain": "/blockchain",
     "broadcastTransaction": "/broadcast/transaction",
     "registerAndBroadcastNode": "/registerAndBroadcastNode",
-    "mine": "/mine"
+    "mine": "/mine",
+    "consensus": "/consensus"
 }
