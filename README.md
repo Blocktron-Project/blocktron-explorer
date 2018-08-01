@@ -1,4 +1,4 @@
-<img src="https://github.com/Blocktron-Project/blocktron-explorer/blob/master/logo.png" height=300 alt="logo">
+<img src="https://github.com/Blocktron-Project/blocktron-explorer/blob/master/logo.png" width=100 alt="logo">
 
 # blocktron-explorer
 
