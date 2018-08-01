@@ -7,6 +7,8 @@ import React, {
 import axios from 'axios';
 import './style.css';
 
+import AddTransaction from '../app-add-transaction/addTransaction';
+
 class ChainConfig extends Component {
     constructor(props) {
         super(props)
@@ -60,11 +62,14 @@ class ChainConfig extends Component {
                             </div>
                             <div className="card-content grey lighten-4">
                                 <div id="pendingTransactions">
+                                    <AddTransaction />
+                                    <p className="grey-text">Pending Transaction are listed here.</p>
                                     {
                                         pendingTransactions.length !== 0
                                             ? <table className="striped highlight responsive-table">
                                                 <thead>
                                                     <tr>
+                                                        <th>#</th>
                                                         <th>Transaction Id</th>
                                                         <th>Amount</th>
                                                         <th>Sender</th>
@@ -77,10 +82,11 @@ class ChainConfig extends Component {
                                                         pendingTransactions.map((transaction, key) => {
                                                             return (
                                                                 <tr key={key}>
-                                                                    <td>{transaction.transactionId.toString()}</td>
+                                                                    <td>{key.toString()}</td>
+                                                                    <td className="trim">{transaction.transactionId.toString()}</td>
                                                                     <td>{transaction.amount.toString()}</td>
                                                                     <td>{transaction.sender.toString()}</td>
-                                                                    <td>{transaction.receiver.toString()}</td>
+                                                                    <td className="trim">{transaction.receiver.toString()}</td>
                                                                 </tr>
                                                             )
                                                         })
