@@ -25,10 +25,10 @@ class NodeChip extends Component {
             let data = this.props.nodeDetails.data;
             return (
                 <div className="center">
-                    <div className="chip lime lighten-3 bold-text tooltipped" data-position="bottom" data-tooltip="Click to view details" onClick={this.handleChipClick}>
+                    <div className="chip lime lighten-3 bold-text z-depth-2 tooltipped" data-position="bottom" data-tooltip="Click to view details" onClick={this.handleChipClick}>
                         <img src="img/node.png" alt="Contact Person" />
                         {data.configuration.node_address}
-                        <i className="close material-icons">close</i>
+                        <i className="close material-icons">cancel</i>
                     </div>
                 </div>
             );
