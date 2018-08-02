@@ -100,7 +100,7 @@ class ChainConfig extends Component {
                                     }
                                 </div>
                                 <div id="networkNodes">
-                                <AddNetworkNode/>
+                                <AddNetworkNode nodeUrl={this.props.nodeAddress}/>
                                     {networkNodes.length !== 0
                                         ? <table className="striped highlight">
                                             <tbody>

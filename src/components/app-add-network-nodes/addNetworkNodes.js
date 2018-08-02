@@ -1,7 +1,9 @@
 import React, {
     Component
 } from 'react';
+import axios from 'axios';
 import './style.css';
+let URL_SCHEMA = require('../../config/urlSchema.json');
 
 class AddNetworkNode extends Component {
     constructor(props) {
@@ -9,8 +11,13 @@ class AddNetworkNode extends Component {
 
         this.state = {
             url: '',
-            addBtn: 'disabled'
+            addBtn: 'disabled',
+            nodeUrl: ''
         };
+    }
+
+    componentDidMount() {
+        this.setState({ nodeUrl: this.props.nodeUrl });
     }
 
     validateUrl = () => {
@@ -29,6 +36,24 @@ class AddNetworkNode extends Component {
         }
     };
 
+    addNodeUrl = (event) => {
+        event.preventDefault();
+        _bt.btProgress.start();
+        let self = this;
+        let nodeUrl = document.querySelector('#node').value;
+        let requestBody = { newNodeUrl: 'http://' + nodeUrl };
+        axios.defaults.headers.post['Content-Type'] = 'application/json';
+        axios.post(this.state.nodeUrl + URL_SCHEMA.registerAndBroadcastNode, requestBody)
+            .then(response => {
+                _bt.btToast('Node added successfully!', { level: 'success' });
+                _bt.btProgress.done();
+            })
+            .catch(error => {
+                _bt.btToast('Node not accessible!', { level: 'error' });
+                _bt.btProgress.done();
+            });
+    };
+
     render() {
         return (
             <div>
@@ -42,8 +67,8 @@ class AddNetworkNode extends Component {
                         <label htmlFor="node">Node Url</label>
                     </div>
                     <div className="col s2">
-                        <a class={`waves-effect btn-floating lime btn ${this.state.addBtn}`}>
-                            <i class="material-icons">add</i></a>
+                        <a className={`waves-effect btn-floating lime btn ${this.state.addBtn}`} onClick={this.addNodeUrl}>
+                            <i className="material-icons">add</i></a>
                     </div>
                 </div>
             </div>
