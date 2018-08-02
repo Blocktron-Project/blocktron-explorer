@@ -21,6 +21,18 @@ class ChainConfig extends Component {
     }
 
     componentDidMount() {
+        this.getBlockchain();
+    }
+
+    componentDidUpdate() {
+
+        /**
+         * Materialize init
+         */
+        $('.tabs').tabs();
+    }
+
+    getBlockchain = () => {
         let url = this.props.nodeAddress + '/blockchain';
         axios.get(url)
             .then((response) => {
@@ -32,15 +44,11 @@ class ChainConfig extends Component {
             .catch(error => {
                 //TODO: Catch error and do global error logging
             });
-    }
+    };
 
-    componentDidUpdate() {
-
-        /**
-         * Materialize init
-         */
-        $('.tabs').tabs();
-    }
+    rerenderChainConfig = () => {
+        this.getBlockchain();
+    };
 
     render() {
         if (this.state && this.state.pendingTransactions && this.state.networkNodes) {
@@ -66,41 +74,41 @@ class ChainConfig extends Component {
                                     <AddTransaction />
                                     {
                                         pendingTransactions.length !== 0
-                                            ?<div>
-                                            <p className="grey-text">Pending Transaction are listed here.</p>
-                                            <table className="striped highlight responsive-table">
-                                                <thead>
-                                                    <tr>
-                                                        <th>#</th>
-                                                        <th>Transaction Id</th>
-                                                        <th>Amount</th>
-                                                        <th>Sender</th>
-                                                        <th>Receiver</th>
-                                                    </tr>
-                                                </thead>
+                                            ? <div>
+                                                <p className="grey-text">Pending Transaction are listed here.</p>
+                                                <table className="striped highlight responsive-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>#</th>
+                                                            <th>Transaction Id</th>
+                                                            <th>Amount</th>
+                                                            <th>Sender</th>
+                                                            <th>Receiver</th>
+                                                        </tr>
+                                                    </thead>
 
-                                                <tbody>
-                                                    {
-                                                        pendingTransactions.map((transaction, key) => {
-                                                            return (
-                                                                <tr key={key}>
-                                                                    <td>{key.toString()}</td>
-                                                                    <td className="trim">{transaction.transactionId.toString()}</td>
-                                                                    <td>{transaction.amount.toString()}</td>
-                                                                    <td>{transaction.sender.toString()}</td>
-                                                                    <td className="trim">{transaction.receiver.toString()}</td>
-                                                                </tr>
-                                                            )
-                                                        })
-                                                    }
-                                                </tbody>
-                                            </table>
+                                                    <tbody>
+                                                        {
+                                                            pendingTransactions.map((transaction, key) => {
+                                                                return (
+                                                                    <tr key={key}>
+                                                                        <td>{key.toString()}</td>
+                                                                        <td className="trim">{transaction.transactionId.toString()}</td>
+                                                                        <td>{transaction.amount.toString()}</td>
+                                                                        <td>{transaction.sender.toString()}</td>
+                                                                        <td className="trim">{transaction.receiver.toString()}</td>
+                                                                    </tr>
+                                                                )
+                                                            })
+                                                        }
+                                                    </tbody>
+                                                </table>
                                             </div>
                                             : <p className="grey-text">No pending transactions are found.</p>
                                     }
                                 </div>
                                 <div id="networkNodes">
-                                <AddNetworkNode nodeUrl={this.props.nodeAddress}/>
+                                    <AddNetworkNode nodeUrl={this.props.nodeAddress} rerenderChainConfig={this.rerenderChainConfig}/>
                                     {networkNodes.length !== 0
                                         ? <table className="striped highlight">
                                             <tbody>

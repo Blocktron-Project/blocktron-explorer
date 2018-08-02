@@ -45,6 +45,7 @@ class AddNetworkNode extends Component {
         axios.defaults.headers.post['Content-Type'] = 'application/json';
         axios.post(this.state.nodeUrl + URL_SCHEMA.registerAndBroadcastNode, requestBody)
             .then(response => {
+                this.props.rerenderChainConfig();
                 _bt.btToast('Node added successfully!', { level: 'success' });
                 _bt.btProgress.done();
             })
