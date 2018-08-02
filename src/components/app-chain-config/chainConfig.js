@@ -8,6 +8,7 @@ import axios from 'axios';
 import './style.css';
 
 import AddTransaction from '../app-add-transaction/addTransaction';
+import AddNetworkNode from '../app-add-network-nodes/addNetworkNodes';
 
 class ChainConfig extends Component {
     constructor(props) {
@@ -99,6 +100,7 @@ class ChainConfig extends Component {
                                     }
                                 </div>
                                 <div id="networkNodes">
+                                <AddNetworkNode/>
                                     {networkNodes.length !== 0
                                         ? <table className="striped highlight">
                                             <tbody>
