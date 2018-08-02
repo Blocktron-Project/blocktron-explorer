@@ -25,12 +25,17 @@ class AddTransaction extends Component {
         let validReceiver = ((receiver.length === 0 || receiver.length <= 3 || receiver === undefined || receiver === null) ? false : true);
 
         if(!validAmount){
-
+            this.setState({amount: 'invalid'});
+        }
+        if(!validReceiver){
+            this.setState({receiver: 'invalid'});
         }
     };
 
     clear = () => {
-
+         document.querySelector('#amount').value = '';
+         document.querySelector('#receiver').value = '';
+         return;
     };
 
     render() {
@@ -41,7 +46,7 @@ class AddTransaction extends Component {
                     Add Transaction</span>
                 <p>You can add more transactions here.</p>
                 <div className="row">
-                <form onChange={this.validate}>
+                <form id="form" onChange={this.validate}>
                 <div className="input-field col s12">
                         <input id="amount" type="text" className={`validate ${this.state.amount}`} />
                         <label htmlFor="amount">Amount</label>
@@ -57,7 +62,7 @@ class AddTransaction extends Component {
                     <div className={`col s12 form-control clearfix ${this.state.form}`}>
                         <a className={`waves-effect btn lime right ${this.state.send}`}>
                             <i className="material-icons left">send</i>Off you go!</a>
-                        <a className={`waves-effect btn orange lighten-3 right ${this.state.clear}`}>
+                        <a className={`waves-effect btn orange lighten-3 right ${this.state.clear}`} onClick={this.clear}>
                             <i className="material-icons left">clear_all</i>Clear</a> &nbsp;
                     </div>
                 </form>
