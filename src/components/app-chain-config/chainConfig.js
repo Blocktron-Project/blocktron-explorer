@@ -110,7 +110,9 @@ class ChainConfig extends Component {
                                 <div id="networkNodes">
                                     <AddNetworkNode nodeUrl={this.props.nodeAddress} rerenderChainConfig={this.rerenderChainConfig}/>
                                     {networkNodes.length !== 0
-                                        ? <table className="striped highlight">
+                                        ?<div>
+                                        <p className="grey-text">Network nodes are listed here.</p> 
+                                        <table className="striped highlight">
                                             <tbody>
                                                 {networkNodes.map((node, key) => {
                                                     return (
@@ -121,6 +123,7 @@ class ChainConfig extends Component {
                                                 })}
                                             </tbody>
                                         </table>
+                                        </div>
                                         : <p className="grey-text">No nodes have been added.</p>
                                     }
                                 </div>
