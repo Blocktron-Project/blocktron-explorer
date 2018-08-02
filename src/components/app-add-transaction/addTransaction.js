@@ -16,32 +16,49 @@ class AddTransaction extends Component {
         };
     }
 
+    /**
+     * Validate amount input
+     */
     validateAmount = () => {
-        this.setState({ form: '' });
-        let amount = document.querySelector('#amount').value;
-        if (amount.length === 0 || amount === undefined || amount === null || isNaN(amount)) {
-            this.setState({ amount: 'invalid' });
-        } else {
-            this.setState({
+        let self = this;
+        self.setState({ form: '' });
+        let amountValue = document.querySelector('#amount').value;
+        if (amountValue && !isNaN(amountValue)) {
+            self.setState({
                 amount: 'valid',
                 send: ''
+            });
+        } else {
+            self.setState({
+                amount: 'invalid',
+                send: 'disabled'
             });
         }
     };
 
+    /**
+     * Validate receiver input
+     */
     validateReceiver = () => {
-        this.setState({ form: '' });
-        let receiver = document.querySelector('#receiver').value;
-        if (receiver.length === 0 || receiver.length <= 3 || receiver === undefined || receiver === null) {
-            this.setState({ receiver: 'invalid' });
+        let self = this;
+        self.setState({ form: '' });
+        let receiverValue = document.querySelector('#receiver').value;
+        if (receiverValue.length === 0 || receiverValue.length <= 3 || receiverValue === undefined || receiverValue === null) {
+            self.setState({
+                receiver: 'invalid',
+                send: 'disabled'
+            });
         } else {
-            this.setState({
+            self.setState({
                 receiver: 'valid',
                 send: ''
             });
         }
     };
 
+    /**
+     * Clear the form/inputs
+     */
     clear = () => {
         document.querySelector('#amount').value = '';
         document.querySelector('#receiver').value = '';
@@ -60,7 +77,6 @@ class AddTransaction extends Component {
                     Add Transaction</span>
                 <p>You can add more transactions here.</p>
                 <div className="row">
-
                     <div className="input-field col s12">
                         <input id="amount" type="text" className={`validate ${this.state.amount}`} onChange={this.validateAmount} />
                         <label htmlFor="amount">Amount</label>
@@ -79,7 +95,6 @@ class AddTransaction extends Component {
                         <a className={`waves-effect btn orange lighten-3 right ${this.state.clear}`} onClick={this.clear}>
                             <i className="material-icons left">clear_all</i>Clear</a> &nbsp;
                     </div>
-
                 </div>
             </div>
         );
