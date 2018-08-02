@@ -63,10 +63,11 @@ class ChainConfig extends Component {
                             <div className="card-content grey lighten-4">
                                 <div id="pendingTransactions">
                                     <AddTransaction />
-                                    <p className="grey-text">Pending Transaction are listed here.</p>
                                     {
                                         pendingTransactions.length !== 0
-                                            ? <table className="striped highlight responsive-table">
+                                            ?<div>
+                                            <p className="grey-text">Pending Transaction are listed here.</p>
+                                            <table className="striped highlight responsive-table">
                                                 <thead>
                                                     <tr>
                                                         <th>#</th>
@@ -93,13 +94,13 @@ class ChainConfig extends Component {
                                                     }
                                                 </tbody>
                                             </table>
+                                            </div>
                                             : <p className="grey-text">No pending transactions are found.</p>
                                     }
                                 </div>
                                 <div id="networkNodes">
                                     {networkNodes.length !== 0
-                                        ?
-                                        <table className="striped highlight">
+                                        ? <table className="striped highlight">
                                             <tbody>
                                                 {networkNodes.map((node, key) => {
                                                     return (
