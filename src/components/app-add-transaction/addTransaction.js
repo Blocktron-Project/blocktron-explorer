@@ -4,7 +4,7 @@ import React, {
 import './style.css';
 
 class AddTransaction extends Component {
-    constructor(props){
+    constructor(props) {
         super(props)
 
         this.state = {
@@ -16,26 +16,40 @@ class AddTransaction extends Component {
         };
     }
 
-    validate = () =>{
-        this.setState({form: ''});
+    validateAmount = () => {
+        this.setState({ form: '' });
         let amount = document.querySelector('#amount').value;
-        let receiver = document.querySelector('#receiver').value;
-
-        let validAmount = ((amount.length === 0 || amount === undefined || amount === null || amount === 0) ? false : true);
-        let validReceiver = ((receiver.length === 0 || receiver.length <= 3 || receiver === undefined || receiver === null) ? false : true);
-
-        if(!validAmount){
-            this.setState({amount: 'invalid'});
+        if (amount.length === 0 || amount === undefined || amount === null || isNaN(amount)) {
+            this.setState({ amount: 'invalid' });
+        } else {
+            this.setState({
+                amount: 'valid',
+                send: ''
+            });
         }
-        if(!validReceiver){
-            this.setState({receiver: 'invalid'});
+    };
+
+    validateReceiver = () => {
+        this.setState({ form: '' });
+        let receiver = document.querySelector('#receiver').value;
+        if (receiver.length === 0 || receiver.length <= 3 || receiver === undefined || receiver === null) {
+            this.setState({ receiver: 'invalid' });
+        } else {
+            this.setState({
+                receiver: 'valid',
+                send: ''
+            });
         }
     };
 
     clear = () => {
-         document.querySelector('#amount').value = '';
-         document.querySelector('#receiver').value = '';
-         return;
+        document.querySelector('#amount').value = '';
+        document.querySelector('#receiver').value = '';
+        this.setState({
+            form: 'hide',
+            send: 'disabled',
+        });
+        return;
     };
 
     render() {
@@ -46,13 +60,13 @@ class AddTransaction extends Component {
                     Add Transaction</span>
                 <p>You can add more transactions here.</p>
                 <div className="row">
-                <form id="form" onChange={this.validate}>
-                <div className="input-field col s12">
-                        <input id="amount" type="text" className={`validate ${this.state.amount}`} />
+
+                    <div className="input-field col s12">
+                        <input id="amount" type="text" className={`validate ${this.state.amount}`} onChange={this.validateAmount} />
                         <label htmlFor="amount">Amount</label>
                     </div>
                     <div className="input-field col s12">
-                        <input id="receiver" type="text" className={`validate ${this.state.receiver}`} />
+                        <input id="receiver" type="text" className={`validate ${this.state.receiver}`} onChange={this.validateReceiver} />
                         <label htmlFor="receiver">Receiver</label>
                     </div>
                     <div className="input-field col s12">
@@ -65,7 +79,7 @@ class AddTransaction extends Component {
                         <a className={`waves-effect btn orange lighten-3 right ${this.state.clear}`} onClick={this.clear}>
                             <i className="material-icons left">clear_all</i>Clear</a> &nbsp;
                     </div>
-                </form>
+
                 </div>
             </div>
         );
