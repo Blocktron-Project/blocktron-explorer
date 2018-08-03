@@ -29,7 +29,7 @@ class DetailsCard extends Component {
     }
 
     handleChainUpdate = () =>{
-        this.forceUpdate();
+        console.log('rerender chain');
     };
 
     render() {
