@@ -1,19 +1,26 @@
 import React, {
     Component
 } from 'react';
+import axios from 'axios';
 import './style.css';
+let URL_SCHEMA = require('../../config/urlSchema.json');
 
 class AddTransaction extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
+            nodeUrl: '',
             amount: '',
             receiver: '',
             form: 'hide',
             send: 'disabled',
             clear: ''
         };
+    }
+
+    componentDidMount() {
+        this.setState({ nodeUrl: this.props.nodeUrl });
     }
 
     /**
@@ -69,6 +76,33 @@ class AddTransaction extends Component {
         return;
     };
 
+    addNewTtransaction = () => {
+        event.preventDefault();
+        _bt.btProgress.start();
+        let self = this;
+        let amount = document.querySelector('#amount').value;
+        let receiver = document.querySelector('#receiver').value;
+        let sender = document.querySelector('#sender').value;
+        let requestBody = {
+            'amount': amount,
+            'sender': sender,
+            'receiver': receiver
+        };
+        axios.defaults.headers.post['Content-Type'] = 'application/json';
+        axios.post(self.state.nodeUrl + URL_SCHEMA.broadcastTransaction, requestBody)
+            .then(response => {
+                self.props.rerenderChainConfig();
+                document.querySelector('#amount').value = '';
+                document.querySelector('#receiver').value = '';
+                _bt.btToast('Transaction added!', { level: 'success' });
+                _bt.btProgress.done();
+            })
+            .catch(error => {
+                _bt.btToast('Transaction failed!', { level: 'error' });
+                _bt.btProgress.done();
+            });
+    };
+
     render() {
         return (
             <div>
@@ -90,7 +124,7 @@ class AddTransaction extends Component {
                         <label htmlFor="sender" className="active">Sender</label>
                     </div>
                     <div className={`col s12 form-control clearfix ${this.state.form}`}>
-                        <a className={`waves-effect btn lime right ${this.state.send}`}>
+                        <a className={`waves-effect btn lime right ${this.state.send}`} onClick={this.addNewTtransaction}>
                             <i className="material-icons left">send</i>Off you go!</a>
                         <a className={`waves-effect btn orange lighten-3 right ${this.state.clear}`} onClick={this.clear}>
                             <i className="material-icons left">clear_all</i>Clear</a> &nbsp;

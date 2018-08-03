@@ -43,9 +43,9 @@ class AddNetworkNode extends Component {
         let nodeUrl = document.querySelector('#node').value;
         let requestBody = { newNodeUrl: 'http://' + nodeUrl };
         axios.defaults.headers.post['Content-Type'] = 'application/json';
-        axios.post(this.state.nodeUrl + URL_SCHEMA.registerAndBroadcastNode, requestBody)
+        axios.post(self.state.nodeUrl + URL_SCHEMA.registerAndBroadcastNode, requestBody)
             .then(response => {
-                this.props.rerenderChainConfig();
+                self.props.rerenderChainConfig();
                 document.querySelector('#node').value = '';
                 _bt.btToast('Node added successfully!', { level: 'success' });
                 _bt.btProgress.done();

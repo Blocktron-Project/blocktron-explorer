@@ -35,7 +35,7 @@ class ChainConfig extends Component {
     rerenderChainConfig = () => {
         this.getBlockchain();
     };
-    
+
     getBlockchain = () => {
         let url = this.props.nodeAddress + '/blockchain';
         axios.get(url)
@@ -71,7 +71,7 @@ class ChainConfig extends Component {
                             </div>
                             <div className="card-content grey lighten-4">
                                 <div id="pendingTransactions">
-                                    <AddTransaction />
+                                    <AddTransaction nodeUrl={this.props.nodeAddress} rerenderChainConfig={this.rerenderChainConfig}/>
                                     {
                                         pendingTransactions.length !== 0
                                             ? <div>
