@@ -21,11 +21,18 @@ class BlockData extends Component {
         this.getBlockchain();
     }
 
-    componentDidUpdate() {
+    componentDidUpdate(prevProps) {
         /**
          * Materialize init
          */
         $('.collapsible').collapsible();
+        
+        /**
+         * Conditionally rerender the component to avoid infinite loop
+         */
+        if (this.props.random !== prevProps.random) {
+            this.getBlockchain();
+        }
     }
 
     getBlockchain = () => {

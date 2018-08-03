@@ -54,7 +54,6 @@ class ChainConfig extends Component {
                     pendingTransactions: response.data.pendingTransactions,
                     networkNodes: response.data.networkNodes
                 });
-                this.props.handleChainUpdate();
                 _bt.btProgress.done();
             })
             .catch(error => {
@@ -70,11 +69,13 @@ class ChainConfig extends Component {
         .then(response => {
             if(response && response.data && response.data.code === 201){
                 this.rerenderChainConfig();
+                this.props.handleChainUpdate();
                 _bt.btToast('New Block mined!', { level: 'success' });
                 _bt.btProgress.done();
             }
         })
         .catch(error => {
+            console.log(error);
             _bt.btToast('Failed to Mine!', { level: 'error' });
             _bt.btProgress.done();
         });

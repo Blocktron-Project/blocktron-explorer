@@ -15,7 +15,8 @@ class DetailsCard extends Component {
         super(props)
 
         this.state = {
-            blockchain: []
+            blockchain: [],
+            random: ''
         };
     }
 
@@ -28,8 +29,8 @@ class DetailsCard extends Component {
         $('.tabs').tabs();
     }
 
-    handleChainUpdate = () =>{
-        console.log('rerender chain');
+    handleChainUpdate = () => {
+        this.setState({ random: floor(Math.random()) });
     };
 
     render() {
@@ -82,8 +83,8 @@ class DetailsCard extends Component {
                     </div>
                     {/* Refactor to make an orchestrator which GETs blockchain data 
                     and pass required data to child components, thus making only a single network request */}
-                    <ChainConfig nodeAddress={this.props.selectedNode.configuration.node_address} handleChainUpdate={this.handleChainUpdate}/>
-                    <BlockChain nodeAddress={this.props.selectedNode.configuration.node_address} />
+                    <ChainConfig nodeAddress={this.props.selectedNode.configuration.node_address} handleChainUpdate={this.props.handleChainUpdate} />
+                    <BlockChain nodeAddress={this.props.selectedNode.configuration.node_address} random={this.state.random}/>
                 </div>
             );
         }
