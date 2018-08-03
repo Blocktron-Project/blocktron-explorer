@@ -34,7 +34,7 @@ class ChainConfig extends Component {
         /**
          * Conditionally rerender the component to avoid infinite loop
          */
-        if(this.props.nodeAddress !== prevProps.nodeAddress){
+        if (this.props.nodeAddress !== prevProps.nodeAddress) {
             this.rerenderChainConfig();
         }
     }
@@ -78,7 +78,7 @@ class ChainConfig extends Component {
                             </div>
                             <div className="card-content grey lighten-4">
                                 <div id="pendingTransactions">
-                                    <AddTransaction nodeUrl={this.props.nodeAddress} rerenderChainConfig={this.rerenderChainConfig}/>
+                                    <AddTransaction nodeUrl={this.props.nodeAddress} rerenderChainConfig={this.rerenderChainConfig} />
                                     {
                                         pendingTransactions.length !== 0
                                             ? <div>
@@ -130,7 +130,7 @@ class ChainConfig extends Component {
                                                     {networkNodes.map((node, key) => {
                                                         return (
                                                             <tr key={key}>
-                                                            <td>{key + 1}</td>
+                                                                <td>{key + 1}</td>
                                                                 <td><strong>{node.toString()}</strong></td>
                                                             </tr>
                                                         )
@@ -141,6 +141,12 @@ class ChainConfig extends Component {
                                         : <p className="grey-text">No nodes have been added.</p>
                                     }
                                 </div>
+                            </div>
+                            <div className="card-action">
+                                <a className="waves-effect btn-flat lime white-text">
+                                    <i className="material-icons left">gavel</i>Mine</a>
+                                <a className="waves-effect btn-flat lime white-text">
+                                    <i className="material-icons left">build</i>Get Consensus</a>
                             </div>
                         </div>
                     </div>
