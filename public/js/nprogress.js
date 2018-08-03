@@ -185,7 +185,7 @@
     var initial = 0, current = 0;
 
     NProgress.promise = function($promise) {
-      if (!$promise || $promise.state() === "resolved") {
+      if (!$promise || $promise.state() === 'resolved') {
         return this;
       }
 
