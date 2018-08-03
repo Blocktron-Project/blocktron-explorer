@@ -7,6 +7,8 @@ import React, {
 import axios from 'axios';
 import './style.css';
 
+let URL_SCHEMA = require('../../config/urlSchema.json');
+
 import AddTransaction from '../app-add-transaction/addTransaction';
 import AddNetworkNode from '../app-add-network-nodes/addNetworkNodes';
 
@@ -44,17 +46,41 @@ class ChainConfig extends Component {
     };
 
     getBlockchain = () => {
-        let url = this.props.nodeAddress + '/blockchain';
+        _bt.btProgress.start();
+        let url = this.props.nodeAddress + URL_SCHEMA.blockchain;
         axios.get(url)
             .then((response) => {
                 this.setState({
                     pendingTransactions: response.data.pendingTransactions,
                     networkNodes: response.data.networkNodes
                 });
+                _bt.btProgress.done();
             })
             .catch(error => {
                 //TODO: Catch error and do global error logging
+                _bt.btProgress.done();
             });
+    };
+
+    mine = () => {
+        _bt.btProgress.start();
+        let url = this.props.nodeAddress + URL_SCHEMA.mine;
+        axios.get(url)
+        .then(response => {
+            if(response && response.data && response.data.code === 201){
+                this.rerenderChainConfig();
+                _bt.btToast('New Block mined!', { level: 'success' });
+                _bt.btProgress.done();
+            }
+        })
+        .catch(error => {
+            _bt.btToast('Failed to Mine!', { level: 'error' });
+            _bt.btProgress.done();
+        });
+    };
+
+    getConsensus = () => {
+        let url;
     };
 
     render() {
@@ -143,9 +169,9 @@ class ChainConfig extends Component {
                                 </div>
                             </div>
                             <div className="card-action">
-                                <a className="waves-effect btn-flat lime white-text">
+                                <a className="waves-effect btn-flat lime white-text" onClick={this.mine}>
                                     <i className="material-icons left">gavel</i>Mine</a>
-                                <a className="waves-effect btn-flat lime white-text">
+                                <a className="waves-effect btn-flat lime white-text" onClick={this.getConsensus}>
                                     <i className="material-icons left">build</i>Get Consensus</a>
                             </div>
                         </div>
