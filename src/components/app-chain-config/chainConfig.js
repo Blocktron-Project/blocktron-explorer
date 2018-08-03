@@ -108,21 +108,28 @@ class ChainConfig extends Component {
                                     }
                                 </div>
                                 <div id="networkNodes">
-                                    <AddNetworkNode nodeUrl={this.props.nodeAddress} rerenderChainConfig={this.rerenderChainConfig}/>
+                                    <AddNetworkNode nodeUrl={this.props.nodeAddress} rerenderChainConfig={this.rerenderChainConfig} />
                                     {networkNodes.length !== 0
-                                        ?<div>
-                                        <p className="grey-text">Network nodes are listed here.</p> 
-                                        <table className="striped highlight">
-                                            <tbody>
-                                                {networkNodes.map((node, key) => {
-                                                    return (
-                                                        <tr key={key}>
-                                                            <td>{key + 1} <strong>{node.toString()}</strong></td>
-                                                        </tr>
-                                                    )
-                                                })}
-                                            </tbody>
-                                        </table>
+                                        ? <div>
+                                            <p className="grey-text">Network nodes are listed here.</p>
+                                            <table className="striped highlight responsive-table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>Node URL</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {networkNodes.map((node, key) => {
+                                                        return (
+                                                            <tr key={key}>
+                                                            <td>{key + 1}</td>
+                                                                <td><strong>{node.toString()}</strong></td>
+                                                            </tr>
+                                                        )
+                                                    })}
+                                                </tbody>
+                                            </table>
                                         </div>
                                         : <p className="grey-text">No nodes have been added.</p>
                                     }

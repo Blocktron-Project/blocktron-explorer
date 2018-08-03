@@ -51,8 +51,13 @@ class AddNetworkNode extends Component {
                 _bt.btProgress.done();
             })
             .catch(error => {
-                _bt.btToast('Node not accessible!', { level: 'error' });
-                _bt.btProgress.done();
+                if (error && error.response) {
+                    _bt.btToast('Node already linked!', { level: 'warn' });
+                    _bt.btProgress.done();
+                  }else{
+                    _bt.btToast('Node not accessible!', { level: 'error' });
+                    _bt.btProgress.done();
+                  }
             });
     };
 
