@@ -21,15 +21,22 @@ class ChainConfig extends Component {
     }
 
     componentDidMount() {
-        this.getBlockchain();
+        this.rerenderChainConfig();
     }
 
-    componentDidUpdate() {
+    componentDidUpdate(prevProps) {
 
         /**
          * Materialize init
          */
         $('.tabs').tabs();
+
+        /**
+         * Conditionally rerender the component to avoid infinite loop
+         */
+        if(this.props.nodeAddress !== prevProps.nodeAddress){
+            this.rerenderChainConfig();
+        }
     }
 
     rerenderChainConfig = () => {
