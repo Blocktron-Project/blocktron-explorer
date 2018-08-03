@@ -11,7 +11,7 @@ class Body extends Component {
         super(props)
 
         this.state = {
-            NodeDetails: '',
+            NodeArray: [],
             selectedNode: ''
         };
     }
@@ -25,7 +25,7 @@ class Body extends Component {
 
     getNodeDetails = (data) => {
         this.setState({
-            NodeDetails: data
+            NodeArray: [...this.state.NodeArray, data]
         });
     };
 
@@ -38,7 +38,11 @@ class Body extends Component {
             <div className="container">
                 <Welcome />
                 <AddNode getNodeDetails={this.getNodeDetails} />
-                <NodeChip nodeDetails={this.state.NodeDetails} handleChipClick={this.handleChipClick} />
+                {
+                    this.state.NodeArray.map((Node, key) => {
+                        return (<NodeChip key={key} nodeDetails={Node} handleChipClick={this.handleChipClick} />)
+                    })
+                }
                 <DetailsCard selectedNode={this.state.selectedNode} />
             </div>
         );
