@@ -91,13 +91,11 @@ class AddTransaction extends Component {
         axios.post(self.state.nodeUrl + URL_SCHEMA.broadcastTransaction, requestBody)
             .then(response => {
                 self.props.rerenderChainConfig();
-                document.querySelector('#amount').value = '';
-                document.querySelector('#receiver').value = '';
+                self.clear();
                 _bt.btToast('Transaction added!', { level: 'success' });
                 _bt.btProgress.done();
             })
             .catch(error => {
-                console.log(error);
                 _bt.btToast('Transaction failed!', { level: 'error' });
                 _bt.btProgress.done();
             });
