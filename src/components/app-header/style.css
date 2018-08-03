@@ -1,6 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Poiret+One');
+
 .beta-badge{
     font-size: 15px;
     line-height: 4;
     margin: 5px;
     color: #ff9800 ;
+}
+
+.brand-logo{
+    font-family: 'Poiret One', cursive;
 }
