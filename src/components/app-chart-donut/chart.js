@@ -13,6 +13,14 @@ class DonutChart extends Component {
     }
 
     componentDidMount() {
+        this.renderChart();
+    }
+
+    componentDidUpdate() {
+        this.renderChart();
+    }
+
+    renderChart = () =>{
         let el = ReactDOM.findDOMNode(this.refs.chart);
         let chart = el.getContext('2d');
         let chartData = {
@@ -27,7 +35,8 @@ class DonutChart extends Component {
             type: 'doughnut',
             data: chartData
         });
-    }
+    };
+
     render() {
         return (
             <div className="col s12 m6">
