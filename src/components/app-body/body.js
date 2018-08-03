@@ -38,11 +38,17 @@ class Body extends Component {
             <div className="container">
                 <Welcome />
                 <AddNode getNodeDetails={this.getNodeDetails} />
-                {
-                    this.state.NodeArray.map((Node, key) => {
-                        return (<NodeChip key={key} nodeDetails={Node} handleChipClick={this.handleChipClick} />)
-                    })
-                }
+                <div className="center">
+                    {
+                        this.state.NodeArray.map((Node, key) => {
+                            {
+                                return (
+                                    <NodeChip key={key} nodeDetails={Node} handleChipClick={this.handleChipClick} />
+                                )
+                            }
+                        })
+                    }
+                </div>
                 <DetailsCard selectedNode={this.state.selectedNode} />
             </div>
         );
