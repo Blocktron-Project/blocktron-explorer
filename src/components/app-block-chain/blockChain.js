@@ -26,7 +26,7 @@ class BlockData extends Component {
          * Materialize init
          */
         $('.collapsible').collapsible();
-        
+
         /**
          * Conditionally rerender the component to avoid infinite loop
          */

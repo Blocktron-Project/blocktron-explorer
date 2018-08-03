@@ -64,12 +64,13 @@ class ChainConfig extends Component {
 
     mine = () => {
         _bt.btProgress.start();
-        let url = this.props.nodeAddress + URL_SCHEMA.mine;
+        let self = this;
+        let url = self.props.nodeAddress + URL_SCHEMA.mine;
         axios.get(url)
         .then(response => {
             if(response && response.data && response.data.code === 201){
-                this.rerenderChainConfig();
-                this.props.handleChainUpdate();
+                self.rerenderChainConfig();
+                self.props.handleChainUpdate();
                 _bt.btToast('New Block mined!', { level: 'success' });
                 _bt.btProgress.done();
             }
