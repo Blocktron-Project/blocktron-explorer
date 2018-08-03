@@ -32,6 +32,10 @@ class ChainConfig extends Component {
         $('.tabs').tabs();
     }
 
+    rerenderChainConfig = () => {
+        this.getBlockchain();
+    };
+    
     getBlockchain = () => {
         let url = this.props.nodeAddress + '/blockchain';
         axios.get(url)
@@ -44,10 +48,6 @@ class ChainConfig extends Component {
             .catch(error => {
                 //TODO: Catch error and do global error logging
             });
-    };
-
-    rerenderChainConfig = () => {
-        this.getBlockchain();
     };
 
     render() {
