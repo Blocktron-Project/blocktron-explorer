@@ -54,6 +54,7 @@ class ChainConfig extends Component {
                     pendingTransactions: response.data.pendingTransactions,
                     networkNodes: response.data.networkNodes
                 });
+                this.props.handleChainUpdate();
                 _bt.btProgress.done();
             })
             .catch(error => {

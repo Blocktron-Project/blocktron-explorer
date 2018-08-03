@@ -6,6 +6,7 @@ import React, {
 } from 'react';
 import axios from 'axios';
 import './style.css';
+let URL_SCHEMA = require('../../config/urlSchema.json');
 
 class BlockData extends Component {
     constructor(props) {
@@ -17,14 +18,7 @@ class BlockData extends Component {
     }
 
     componentDidMount() {
-        let url = this.props.nodeAddress + '/blockchain';
-        axios.get(url)
-            .then((response) => {
-                this.setState({ blockchain: response.data });
-            })
-            .catch(error => {
-                //TODO: Catch error and do global error logging
-            });
+        this.getBlockchain();
     }
 
     componentDidUpdate() {
@@ -33,6 +27,20 @@ class BlockData extends Component {
          */
         $('.collapsible').collapsible();
     }
+
+    getBlockchain = () => {
+        _bt.btProgress.start();
+        let url = this.props.nodeAddress + URL_SCHEMA.blockchain;
+        axios.get(url)
+            .then((response) => {
+                this.setState({ blockchain: response.data });
+                _bt.btProgress.done();
+            })
+            .catch(error => {
+                //TODO: Catch error and do global error logging
+                _bt.btProgress.done();
+            });
+    };
 
     render() {
         if (this.state.blockchain) {
