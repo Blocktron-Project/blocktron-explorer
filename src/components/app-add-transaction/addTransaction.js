@@ -84,11 +84,10 @@ class AddTransaction extends Component {
         let receiver = document.querySelector('#receiver').value;
         let sender = document.querySelector('#sender').value;
         let requestBody = {
-            'amount': amount,
-            'sender': sender,
-            'receiver': receiver
+            amount: amount,
+            sender: sender,
+            receiver: receiver
         };
-        axios.defaults.headers.post['Content-Type'] = 'application/json';
         axios.post(self.state.nodeUrl + URL_SCHEMA.broadcastTransaction, requestBody)
             .then(response => {
                 self.props.rerenderChainConfig();
@@ -98,6 +97,7 @@ class AddTransaction extends Component {
                 _bt.btProgress.done();
             })
             .catch(error => {
+                console.log(error);
                 _bt.btToast('Transaction failed!', { level: 'error' });
                 _bt.btProgress.done();
             });

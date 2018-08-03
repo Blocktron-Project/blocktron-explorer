@@ -1,7 +1,7 @@
 {
     "index": "/",
     "blockchain": "/blockchain",
-    "broadcastTransaction": "/broadcast/transaction",
+    "broadcastTransaction": "/transaction/broadcast",
     "registerAndBroadcastNode": "/registerAndBroadcastNode",
     "mine": "/mine",
     "consensus": "/consensus"
