@@ -94,6 +94,10 @@ class ChainConfig extends Component {
                     _bt.btToast('Blockchain replaced!', { level: 'success' });
                     _bt.btProgress.done();
                 } else if (response && response.data && response.data.code === 200) {
+                    /**
+                     * If already in consensus then no need to rerender or update UI
+                     * following two lines can be removed.
+                     */
                     self.rerenderChainConfig();
                     self.props.handleChainUpdate();
                     _bt.btToast('Already in Consensus!', { level: 'success' });
