@@ -1,6 +1,7 @@
 {
-  "name": "sample",
-  "version": "0.1.0",
+  "name": "blocktron-explorer",
+  "version": "0.0.1",
+  "description": "The web-ui for exploring blocktron blockchain",
   "private": true,
   "dependencies": {
     "autoprefixer": "7.1.6",
@@ -48,7 +49,7 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "test": "node scripts/test.js --env=jsdom --coverage --verbose --forceExit"
   },
   "jest": {
     "collectCoverageFrom": [
