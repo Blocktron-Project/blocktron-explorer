@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './chainConfig';
-import lib from './lib/index';
+import lib from '../../lib';
 
 if (!window.NProgress) {
   window.NProgress = require('../../../public/js/nprogress');
