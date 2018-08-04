@@ -1,0 +1,2 @@
+# SRC - The main source folder
+This folder contans the various source files to be consumed by the react application. The components, configurations, vendor library files, augmented library files etc goes inside this folder. Any file or resource to be used by the app in runtime has to be placed inside this `src` folder.
