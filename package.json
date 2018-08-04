@@ -1,7 +1,7 @@
 {
-  "name": "blocktron-explorer",
-  "version": "0.0.1",
-  "private": false,
+  "name": "sample",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
     "autoprefixer": "7.1.6",
     "axios": "^0.18.0",
@@ -27,15 +27,15 @@
     "file-loader": "1.1.5",
     "fs-extra": "3.0.1",
     "html-webpack-plugin": "2.29.0",
-    "jest": "^23.4.2",
+    "jest": "20.0.4",
     "object-assign": "4.1.1",
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-loader": "2.0.8",
     "promise": "8.0.1",
     "raf": "3.4.0",
-    "react": "^16.4.1",
+    "react": "^16.4.2",
     "react-dev-utils": "^5.0.1",
-    "react-dom": "^16.4.1",
+    "react-dom": "^16.4.2",
     "resolve": "1.6.0",
     "style-loader": "0.19.0",
     "sw-precache-webpack-plugin": "0.11.4",
@@ -48,30 +48,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom --coverage --verbose --forceExit"
+    "test": "node scripts/test.js --env=jsdom"
   },
-  "description": "The web-ui for exploring blocktron blockchain",
-  "main": "index.js",
-  "devDependencies": {
-    "npm": "^6.2.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Blocktron-Project/blocktron-explorer.git"
-  },
-  "keywords": [
-    "blocktron",
-    "blocktron-explorer",
-    "blockchain",
-    "dapps",
-    "blocktron-lib"
-  ],
-  "author": "Sandeep Vattapparambil",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Blocktron-Project/blocktron-explorer/issues"
-  },
-  "homepage": "https://github.com/Blocktron-Project/blocktron-explorer#readme",
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,mjs}"
