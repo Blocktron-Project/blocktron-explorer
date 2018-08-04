@@ -67,23 +67,44 @@ class ChainConfig extends Component {
         let self = this;
         let url = self.props.nodeAddress + URL_SCHEMA.mine;
         axios.get(url)
-        .then(response => {
-            if(response && response.data && response.data.code === 201){
-                self.rerenderChainConfig();
-                self.props.handleChainUpdate();
-                _bt.btToast('New Block mined!', { level: 'success' });
+            .then(response => {
+                if (response && response.data && response.data.code === 201) {
+                    self.rerenderChainConfig();
+                    self.props.handleChainUpdate();
+                    _bt.btToast('New Block mined!', { level: 'success' });
+                    _bt.btProgress.done();
+                }
+            })
+            .catch(error => {
+                _bt.btToast('Failed to Mine!', { level: 'error' });
                 _bt.btProgress.done();
-            }
-        })
-        .catch(error => {
-            console.log(error);
-            _bt.btToast('Failed to Mine!', { level: 'error' });
-            _bt.btProgress.done();
-        });
+            });
     };
 
     getConsensus = () => {
-        let url;
+        _bt.btProgress.start();
+        let self = this;
+        let url = self.props.nodeAddress + URL_SCHEMA.consensus;
+        axios.get(url)
+            .then(response => {
+                if (response && response.data && response.data.code === 201) {
+                    self.rerenderChainConfig();
+                    self.props.handleChainUpdate();
+                    _bt.btToast('Consensus acheived!', { level: 'success' });
+                    _bt.btToast('Blockchain replaced!', { level: 'success' });
+                    _bt.btProgress.done();
+                } else if (response && response.data && response.data.code === 200) {
+                    self.rerenderChainConfig();
+                    self.props.handleChainUpdate();
+                    _bt.btToast('Already in Consensus!', { level: 'success' });
+                    _bt.btToast('Blockchain not replaced!', { level: 'success' });
+                    _bt.btProgress.done();
+                }
+            })
+            .catch(error => {
+                _bt.btToast('Failed to reach consensus!', { level: 'error' });
+                _bt.btProgress.done();
+            });
     };
 
     render() {
