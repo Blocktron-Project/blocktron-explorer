@@ -1,0 +1,2 @@
+# Public
+This folder contains the public static files to be served for the Blocktron Explorer app during runtime. The main html file, css and javascript are also placed here. These are consumed by the app and are packaged accordingly by webpack.
