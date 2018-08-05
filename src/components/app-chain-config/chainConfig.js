@@ -183,7 +183,7 @@ class ChainConfig extends Component {
                                                         </tbody>
                                                     </table>
                                                 </div>
-                                                <div className="center">
+                                                <div className={`center ${pendingTransactions.length <= 2 ? 'hide' : ''}`}>
                                                     <a className="waves-effect lime btn-floating" onClick={this.handleDrawer}>
                                                         <i className="material-icons">{this.state.drawerIcon}</i>
                                                     </a>
@@ -196,26 +196,34 @@ class ChainConfig extends Component {
                                 <div id="networkNodes">
                                     <AddNetworkNode nodeUrl={this.props.nodeAddress} rerenderChainConfig={this.rerenderChainConfig} />
                                     {networkNodes.length !== 0
-                                        ? <div className="drawer">
-                                            <p className="grey-text">Network nodes are listed here.</p>
-                                            <table className="striped highlight responsive-table">
-                                                <thead>
-                                                    <tr>
-                                                        <th>#</th>
-                                                        <th>Node URL</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    {networkNodes.map((node, key) => {
-                                                        return (
-                                                            <tr key={key}>
-                                                                <td>{key + 1}</td>
-                                                                <td><strong>{node.toString()}</strong></td>
-                                                            </tr>
-                                                        )
-                                                    })}
-                                                </tbody>
-                                            </table>
+
+                                        ? <div>
+                                            <div className={`${this.state.drawer}`}>
+                                                <p className="grey-text">Network nodes are listed here.</p>
+                                                <table className="striped highlight responsive-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>#</th>
+                                                            <th>Node URL</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        {networkNodes.map((node, key) => {
+                                                            return (
+                                                                <tr key={key}>
+                                                                    <td>{key + 1}</td>
+                                                                    <td><strong>{node.toString()}</strong></td>
+                                                                </tr>
+                                                            )
+                                                        })}
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div className={`center ${networkNodes.length <= 2 ? 'hide' : ''}`}>
+                                                <a className="waves-effect lime btn-floating" onClick={this.handleDrawer}>
+                                                    <i className="material-icons">{this.state.drawerIcon}</i>
+                                                </a>
+                                            </div>
                                         </div>
                                         : <p className="grey-text">No nodes have been added.</p>
                                     }
