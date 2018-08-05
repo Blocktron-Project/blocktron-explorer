@@ -1,0 +1,2 @@
+# Configuring Build
+The command `npm run build` will generate the valid compressed build distributables for the blocktron explorer project. But this command assumes the homapage field from the `package.json` file. Assuming the url structure, the value of `%PUBLIC_URL%` will be replaced by the value from the homapage field. See stackoverflow [post](https://stackoverflow.com/questions/42686149/create-react-app-build-with-public-url)
