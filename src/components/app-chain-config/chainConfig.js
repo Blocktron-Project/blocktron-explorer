@@ -18,7 +18,9 @@ class ChainConfig extends Component {
 
         this.state = {
             pendingTransactions: '',
-            networkNodes: ''
+            networkNodes: '',
+            drawer: 'drawer',
+            drawerIcon: 'expand_more'
         };
     }
 
@@ -40,6 +42,10 @@ class ChainConfig extends Component {
             this.rerenderChainConfig();
         }
     }
+
+    handleDrawer = () => {
+        this.state.drawer === 'drawer' ? this.setState({ drawer: '', drawerIcon: 'expand_less' }) : this.setState({ drawer: 'drawer', drawerIcon: 'expand_more' });
+    };
 
     rerenderChainConfig = () => {
         this.getBlockchain();
@@ -147,34 +153,42 @@ class ChainConfig extends Component {
                                     <AddTransaction nodeUrl={this.props.nodeAddress} rerenderChainConfig={this.rerenderChainConfig} />
                                     {
                                         pendingTransactions.length !== 0
-                                            ? <div className="drawer">
-                                                <p className="grey-text">Pending Transaction are listed here.</p>
-                                                <table className="striped highlight responsive-table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>#</th>
-                                                            <th>Transaction Id</th>
-                                                            <th>Amount</th>
-                                                            <th>Sender</th>
-                                                            <th>Receiver</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        {
-                                                            pendingTransactions.map((transaction, key) => {
-                                                                return (
-                                                                    <tr key={key}>
-                                                                        <td>{key.toString()}</td>
-                                                                        <td className="trim">{transaction.transactionId.toString()}</td>
-                                                                        <td>{transaction.amount.toString()}</td>
-                                                                        <td>{transaction.sender.toString()}</td>
-                                                                        <td className="trim">{transaction.receiver.toString()}</td>
-                                                                    </tr>
-                                                                )
-                                                            })
-                                                        }
-                                                    </tbody>
-                                                </table>
+                                            ? <div>
+                                                <div className={`${this.state.drawer}`}>
+                                                    <p className="grey-text">Pending Transaction are listed here.</p>
+                                                    <table className="striped highlight responsive-table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>#</th>
+                                                                <th>Transaction Id</th>
+                                                                <th>Amount</th>
+                                                                <th>Sender</th>
+                                                                <th>Receiver</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            {
+                                                                pendingTransactions.map((transaction, key) => {
+                                                                    return (
+                                                                        <tr key={key}>
+                                                                            <td>{key.toString()}</td>
+                                                                            <td className="trim">{transaction.transactionId.toString()}</td>
+                                                                            <td>{transaction.amount.toString()}</td>
+                                                                            <td>{transaction.sender.toString()}</td>
+                                                                            <td className="trim">{transaction.receiver.toString()}</td>
+                                                                        </tr>
+                                                                    )
+                                                                })
+                                                            }
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div className="center">
+                                                    <a className="waves-effect lime btn-floating" onClick={this.handleDrawer}>
+                                                        <i className="material-icons">{this.state.drawerIcon}</i>
+                                                    </a>
+                                                </div>
+
                                             </div>
                                             : <p className="grey-text">No pending transactions are found.</p>
                                     }

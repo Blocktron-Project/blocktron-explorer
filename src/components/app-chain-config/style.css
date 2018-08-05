@@ -19,3 +19,8 @@ table.striped>tbody>tr>td:nth-child(3) {
     background: #ccc;
     border-radius: 22px;
 }
+
+.drawer {
+    max-height: 180px;
+    overflow: hidden;
+}
