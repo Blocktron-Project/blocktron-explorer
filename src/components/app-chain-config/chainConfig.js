@@ -125,9 +125,21 @@ class ChainConfig extends Component {
                             <div className="card-tabs">
                                 <ul className="tabs tabs-fixed-width">
                                     <li className="tab">
-                                        <a className="active" href="#pendingTransactions">Pending Transactions {pendingTransactions.length !== 0 ? '(' + pendingTransactions.length.toString() + ')' : ''}</a></li>
+                                        <a className="active" href="#pendingTransactions">Pending Transactions &nbsp;
+                                        {pendingTransactions.length !== 0
+                                                ? <span className="notific-badge lime lighten-2">
+                                                    {pendingTransactions.length.toString()} </span>
+                                                : ''}
+                                        </a>
+                                    </li>
                                     <li className="tab">
-                                        <a href="#networkNodes">Network Nodes {networkNodes.length !== 0 ? '(' + networkNodes.length.toString() + ')' : ''}</a></li>
+                                        <a href="#networkNodes">Network Nodes &nbsp;
+                                        {networkNodes.length !== 0
+                                                ? <span className="notific-badge lime lighten-2">
+                                                    {networkNodes.length.toString()} </span>
+                                                : ''}
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                             <div className="card-content grey lighten-4">
@@ -135,7 +147,7 @@ class ChainConfig extends Component {
                                     <AddTransaction nodeUrl={this.props.nodeAddress} rerenderChainConfig={this.rerenderChainConfig} />
                                     {
                                         pendingTransactions.length !== 0
-                                            ? <div>
+                                            ? <div className="drawer">
                                                 <p className="grey-text">Pending Transaction are listed here.</p>
                                                 <table className="striped highlight responsive-table">
                                                     <thead>
@@ -147,7 +159,6 @@ class ChainConfig extends Component {
                                                             <th>Receiver</th>
                                                         </tr>
                                                     </thead>
-
                                                     <tbody>
                                                         {
                                                             pendingTransactions.map((transaction, key) => {
@@ -171,7 +182,7 @@ class ChainConfig extends Component {
                                 <div id="networkNodes">
                                     <AddNetworkNode nodeUrl={this.props.nodeAddress} rerenderChainConfig={this.rerenderChainConfig} />
                                     {networkNodes.length !== 0
-                                        ? <div>
+                                        ? <div className="drawer">
                                             <p className="grey-text">Network nodes are listed here.</p>
                                             <table className="striped highlight responsive-table">
                                                 <thead>
