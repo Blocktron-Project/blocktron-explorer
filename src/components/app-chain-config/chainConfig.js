@@ -183,8 +183,8 @@ class ChainConfig extends Component {
                                                         </tbody>
                                                     </table>
                                                 </div>
-                                                <div className={`center ${pendingTransactions.length <= 2 ? 'hide' : ''}`}>
-                                                    <a className="waves-effect lime btn-floating" onClick={this.handleDrawer}>
+                                                <div className={`center hide-on-med-and-down ${pendingTransactions.length <= 2 ? 'hide' : ''}`}>
+                                                    <a className="waves-effect lime lighten-2 btn-floating" onClick={this.handleDrawer}>
                                                         <i className="material-icons">{this.state.drawerIcon}</i>
                                                     </a>
                                                 </div>
@@ -219,8 +219,8 @@ class ChainConfig extends Component {
                                                     </tbody>
                                                 </table>
                                             </div>
-                                            <div className={`center ${networkNodes.length <= 2 ? 'hide' : ''}`}>
-                                                <a className="waves-effect lime btn-floating" onClick={this.handleDrawer}>
+                                            <div className={`center hide-on-med-and-down ${networkNodes.length <= 2 ? 'hide' : ''}`}>
+                                                <a className="waves-effect lime lighten-2 btn-floating" onClick={this.handleDrawer}>
                                                     <i className="material-icons">{this.state.drawerIcon}</i>
                                                 </a>
                                             </div>
