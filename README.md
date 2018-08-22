@@ -20,3 +20,17 @@
 * [License]()
 * [Acknowledgements]()
 <!--te-->
+
+## About
+## Getting Started
+## Installation
+## Changelog
+## Usage
+## Tests
+## Continuous Integration
+## Contributing
+## Versioning
+## Authors
+## License
+## Acknowledgements
+Made with :hear️t: by Sandeep Vattapparambil.
