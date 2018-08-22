@@ -21,7 +21,6 @@
 * [Acknowledgements]()
 <!--te-->
 
-## About
 ## Getting Started
 ## Installation
 ## Changelog
