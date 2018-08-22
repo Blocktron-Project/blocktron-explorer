@@ -33,4 +33,4 @@
 ## Authors
 ## License
 ## Acknowledgements
-Made with :hear️t: by Sandeep Vattapparambil.
+Made with ❤️ by Sandeep Vattapparambil.
