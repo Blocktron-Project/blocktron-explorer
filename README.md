@@ -39,8 +39,8 @@ Once you have the local copy of repo, you can install dependencies by:
 npm i
 ```
 ## Changelog
-* v0.0.1
- - Beta build
+* [`v0.0.1`]()
+  - Beta build
 
 ## Usage
 Once you have downloaded and installed the project, you have to build it by:
