@@ -30,12 +30,28 @@ or using SSH:
 ```sh
 git@github.com:Blocktron-Project/blocktron-explorer.git
 ```
-or download from:
+or download a zip from:
 [https://github.com/Blocktron-Project/blocktron-explorer/archive/master.zip](https://github.com/Blocktron-Project/blocktron-explorer/archive/master.zip)
 
 ## Installation
+Once you have the local copy of repo, you can install dependencies by:
+```sh
+npm i
+```
 ## Changelog
+* v0.0.1
+ - Beta build
+
 ## Usage
+Once you have downloaded and installed the project, you have to build it by:
+```sh
+npm run build
+```
+or you can run a development setup by:
+```sh
+npm start
+```
+
 ## Tests
 This project follows a **Test Driven Development (TDD)**. Unit tests are written using Jest, an opensource testing and code coverage framework from facebook opensource. Test spec files can be found inside the test folder. Tests can be run by the command:
 ```sh
