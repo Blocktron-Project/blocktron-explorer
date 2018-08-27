@@ -22,6 +22,17 @@
 <!--te-->
 
 ## Getting Started
+You can grab a copy of Blocktron-Explorer from the following:
+```sh
+git clone https://github.com/Blocktron-Project/blocktron-explorer.git
+```
+or using SSH:
+```sh
+git@github.com:Blocktron-Project/blocktron-explorer.git
+```
+or download from:
+[https://github.com/Blocktron-Project/blocktron-explorer/archive/master.zip](https://github.com/Blocktron-Project/blocktron-explorer/archive/master.zip)
+
 ## Installation
 ## Changelog
 ## Usage
