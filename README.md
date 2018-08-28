@@ -78,16 +78,20 @@ once you have entered a vlid url you can click the `+` button which will add you
 
 Now you can select your desired node to interact with it.
 
-## Overview
+### Overview
 Once you have a node selected then `overview` tab will be active. This tab will how the basic overview of the node with status messages, application port number and node identifier as shown:
 
 <img src="https://github.com/Blocktron-Project/blocktron-explorer/blob/master/public/img/overview.PNG" alt="overview">
 
-## Configuration
+### Configuration
 This tab shows the configuration details of the particular node that you selected:
 
 <img src="https://github.com/Blocktron-Project/blocktron-explorer/blob/master/public/img/config.PNG" alt="config">
 
+### Memory & Resources
+This tab shows information about the Memory allocated for blocktron-node instance you selected:
+
+<img src="https://github.com/Blocktron-Project/blocktron-explorer/blob/master/public/img/mem res.PNG" alt="mem"
 
 ## Tests
 This project follows a **Test Driven Development (TDD)**. Unit tests are written using Jest, an opensource testing and code coverage framework from facebook opensource. Test spec files can be found inside the test folder. Tests can be run by the command:
