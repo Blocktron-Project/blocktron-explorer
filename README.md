@@ -72,6 +72,10 @@ once you have entered a vlid url you can click the `+` button which will add you
 
 <img src="https://github.com/Blocktron-Project/blocktron-explorer/blob/master/public/img/url added.PNG" alt="url added">
 
+>Note: You can multiple nodes and interact with them at the same time
+
+<img src="https://github.com/Blocktron-Project/blocktron-explorer/blob/master/public/img/multiplenodes.PNG" alt="multiple nodes">
+
 ## Tests
 This project follows a **Test Driven Development (TDD)**. Unit tests are written using Jest, an opensource testing and code coverage framework from facebook opensource. Test spec files can be found inside the test folder. Tests can be run by the command:
 ```sh
