@@ -68,6 +68,10 @@ Then you can enter the url as shown:
 
 <img src="https://github.com/Blocktron-Project/blocktron-explorer/blob/master/public/img/url.PNG" alt="addnode">
 
+once you have entered a vlid url you can click the `+` button which will add your node to the explorer as shown:
+
+<img src="https://github.com/Blocktron-Project/blocktron-explorer/blob/master/public/img/url added.PNG" alt="url added">
+
 ## Tests
 This project follows a **Test Driven Development (TDD)**. Unit tests are written using Jest, an opensource testing and code coverage framework from facebook opensource. Test spec files can be found inside the test folder. Tests can be run by the command:
 ```sh
