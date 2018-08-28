@@ -91,7 +91,7 @@ This tab shows the configuration details of the particular node that you selecte
 ### Memory & Resources
 This tab shows information about the Memory allocated for blocktron-node instance you selected:
 
-<img src="https://github.com/Blocktron-Project/blocktron-explorer/blob/master/public/img/mem res.PNG" alt="mem"
+<img src="https://github.com/Blocktron-Project/blocktron-explorer/blob/master/public/img/mem res.PNG" alt="mem">
 
 ## Tests
 This project follows a **Test Driven Development (TDD)**. Unit tests are written using Jest, an opensource testing and code coverage framework from facebook opensource. Test spec files can be found inside the test folder. Tests can be run by the command:
