@@ -52,8 +52,9 @@ or you can run a development setup by:
 npm start
 ```
 Once running, a browser tab will be opened automatically pointing to the url: `http://localhost:3000/`, which will have the following UI:
-![startup](public/img/start.png)
 
+![startup](public/img/start.png)
+<img src="https://github.com/Blocktron-Project/blocktron-explorer/blob/master/public/img/start.png" alt="startup">
 
 ## Tests
 This project follows a **Test Driven Development (TDD)**. Unit tests are written using Jest, an opensource testing and code coverage framework from facebook opensource. Test spec files can be found inside the test folder. Tests can be run by the command:
