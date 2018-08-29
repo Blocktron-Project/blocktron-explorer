@@ -109,12 +109,12 @@ This tab lists the network addresses of the nodes attached to the blockchian of 
 ### Genesis Block
 This card displays the genesis block on the blockchain of the current node. Every blockchain starts itself from the dummy block called genesis block.
 
-<img src="https://github.com/Blocktron-Project/blocktron-explorer/blob/master/public/img/block.PNG" alt="block">
+<img src="https://github.com/Blocktron-Project/blocktron-explorer/blob/master/public/img/genesis.PNG" alt="genesis">
 
 ### Data Block
 A sample data block will look like the following:
 
-<img src="https://github.com/Blocktron-Project/blocktron-explorer/blob/master/public/img/genesis.PNG" alt="genesis">
+<img src="https://github.com/Blocktron-Project/blocktron-explorer/blob/master/public/img/block.PNG" alt="block">
 
 ## Tests
 This project follows a **Test Driven Development (TDD)**. Unit tests are written using Jest, an opensource testing and code coverage framework from facebook opensource. Test spec files can be found inside the test folder. Tests can be run by the command:
