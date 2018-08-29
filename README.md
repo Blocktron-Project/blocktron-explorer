@@ -93,6 +93,29 @@ This tab shows information about the Memory allocated for blocktron-node instanc
 
 <img src="https://github.com/Blocktron-Project/blocktron-explorer/blob/master/public/img/mem res.PNG" alt="mem">
 
+### Blockchain Configuration
+This section contains two tabs:
+
+### Pending Transactions
+This tab shows the list of pending transactions in the current node. And also you can add new transactions to the blockchain on this node through the form as shown:
+
+<img src="https://github.com/Blocktron-Project/blocktron-explorer/blob/master/public/img/pending.PNG" alt="pending">
+
+### Network Nodes
+This tab lists the network addresses of the nodes attached to the blockchian of the current node.
+
+<img src="https://github.com/Blocktron-Project/blocktron-explorer/blob/master/public/img/netnode.PNG" alt="netnode">
+
+### Genesis Block
+This card displays the genesis block on the blockchain of the current node. Every blockchain starts itself from the dummy block called genesis block.
+
+<img src="https://github.com/Blocktron-Project/blocktron-explorer/blob/master/public/img/block.PNG" alt="block">
+
+### Data Block
+A sample data block will look like the following:
+
+<img src="https://github.com/Blocktron-Project/blocktron-explorer/blob/master/public/img/genesis.PNG" alt="genesis">
+
 ## Tests
 This project follows a **Test Driven Development (TDD)**. Unit tests are written using Jest, an opensource testing and code coverage framework from facebook opensource. Test spec files can be found inside the test folder. Tests can be run by the command:
 ```sh
